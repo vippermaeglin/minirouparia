@@ -1,0 +1,46 @@
+﻿<div aria-hidden="true" class="modal fade" id="guest-modal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6" style="border-right: 1px dotted #666;">
+                            <h3>Entre com sua conta</h3>
+                            <p>Finalizaremos seu pedido mais rápido</p>
+                            {% form 'external_login' %}
+                                <p class="text-right">
+                                    {% for login_provider in login_providers %}
+                                        <button name="context[authentication_type]" type="submit" value="{{ login_provider.authentication_type }}" style="background: transparent; border: 0; margin-right: 5px; padding: 0;" title="Sign in with {{ login_provider.caption }} account">
+                                            {% assign icon_filename = 'assets/icon_' | append: login_provider.authentication_type | downcase %}
+                                            {% assign icon_fullname = icon_filename | append: '_32.png' %}
+                                            {{ icon_fullname | shopify_asset_url | img_tag }}
+                                        </button>
+                                    {% endfor %}
+                                </p>
+                            {% endform %}
+                            {% form 'customer_login' %}
+                                <input id="returnUrl" name="returnUrl" type="hidden" value="/checkout/step-1" />
+                                <div class="form-group">
+                                    <label for="customer_email">Email</label>
+                                    <input class="form-control" id="customer_email" name="customer[email]" required="required" type="email" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="customer_password">Senha</label>
+                                    <input class="form-control" id="customer_password" name="customer[password]" required="required" type="password" value="" />
+                                </div>
+                                <p><a href="/account/login#recover">Esqueceu a senha?</a></p><br />
+                                <button class="btn btn-primary" type="submit">Enttrar</button>
+                            {% endform %}
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Continuar sem registrar</h3>
+                            <p>Você terá a opção de criar uma conta após sua compra.</p>
+                            <p>Você também pode <a href="/account/register">criar sua conta agora</a>.</p><br />
+                            <p class="text-center"><button class="btn btn-primary" data-dismiss="modal">Continuar como convidado</button></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

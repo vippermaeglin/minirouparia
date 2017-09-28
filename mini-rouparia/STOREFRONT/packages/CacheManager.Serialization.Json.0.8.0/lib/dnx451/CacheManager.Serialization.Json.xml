@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CacheManager.Serialization.Json</name>
+    </assembly>
+    <members>
+        <member name="T:CacheManager.Core.JsonCacheItem">
+            <summary>
+            The json cache item will be used to serialize a <see cref="T:CacheManager.Core.CacheItem`1"/>.
+            A <see cref="T:CacheManager.Core.CacheItem`1"/> cannot be derserialized by Newtonsoft.Json because of the private setters.
+            </summary>
+        </member>
+        <member name="T:CacheManager.Core.JsonConfigurationBuilderExtensions">
+            <summary>
+            Extensions for the configuration builder for the <code>Newtonsoft.Json</code> based <see cref="T:CacheManager.Core.Internal.ICacheSerializer"/>.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Core.JsonConfigurationBuilderExtensions.WithJsonSerializer(CacheManager.Core.ConfigurationBuilderCachePart)">
+            <summary>
+            Configures the cache manager to use the <code>Newtonsoft.Json</code> based cache serializer.
+            </summary>
+            <param name="part">The configuration part.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="M:CacheManager.Core.JsonConfigurationBuilderExtensions.WithJsonSerializer(CacheManager.Core.ConfigurationBuilderCachePart,Newtonsoft.Json.JsonSerializerSettings,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Configures the cache manager to use the <code>Newtonsoft.Json</code> based cache serializer.
+            </summary>
+            <param name="part">The configuration part.</param>
+            <param name="serializationSettings">The settings to be used during serialization.</param>
+            <param name="deserializationSettings">The settings to be used during deserialization.</param>
+            <returns>The builder instance.</returns>
+        </member>
+        <member name="T:CacheManager.Serialization.Json.JsonCacheSerializer">
+            <summary>
+            Implements the <see cref="T:CacheManager.Core.Internal.ICacheSerializer"/> contract using <c>Newtonsoft.Json</c>.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Serialization.Json.JsonCacheSerializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CacheManager.Serialization.Json.JsonCacheSerializer"/> class.
+            </summary>
+        </member>
+        <member name="M:CacheManager.Serialization.Json.JsonCacheSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CacheManager.Serialization.Json.JsonCacheSerializer"/> class.
+            With this overload the settings for de-/serialization can be set independently.
+            </summary>
+            <param name="serializationSettings">The settings which should be used during serialization.</param>
+            <param name="deserializationSettings">The settings which should be used during deserialization.</param>
+        </member>
+        <member name="P:CacheManager.Serialization.Json.JsonCacheSerializer.DeserializationSettings">
+            <summary>
+            Gets the settings which should be used during deserialization.
+            If nothing is specified the default <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> will be used.
+            </summary>
+            <value>The deserialization settings.</value>
+        </member>
+        <member name="P:CacheManager.Serialization.Json.JsonCacheSerializer.SerializationSettings">
+            <summary>
+            Gets the settings which should be used during serialization.
+            If nothing is specified the default <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/> will be used.
+            </summary>
+            <value>The serialization settings.</value>
+        </member>
+        <member name="M:CacheManager.Serialization.Json.JsonCacheSerializer.Deserialize(System.Byte[],System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CacheManager.Serialization.Json.JsonCacheSerializer.DeserializeCacheItem``1(System.Byte[],System.Type)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CacheManager.Serialization.Json.JsonCacheSerializer.Serialize``1(``0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:CacheManager.Serialization.Json.JsonCacheSerializer.SerializeCacheItem``1(CacheManager.Core.CacheItem{``0})">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>
