@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.Content.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.MenuController.GetLists(System.String)">
+            <summary>
+            Get menu link lists
+            </summary>
+            <param name="storeId">Store id</param>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.MenuController.GetList(System.String,System.String)">
+            <summary>
+            Get menu link list by id
+            </summary>
+            <param name="listId">List id</param>
+            <param name="storeId">Store id</param>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.MenuController.CheckName(System.String,System.String,System.String,System.String)">
+            <summary>
+            Checking name of menu link list
+            </summary>
+            <remarks>Checking pair of name+language of menu link list for unique, if checking result - false saving unavailable</remarks>
+            <param name="storeId">Store id</param>
+            <param name="name">Name of menu link list</param>
+            <param name="language">Language of menu link list</param>
+            <param name="id">Menu link list id</param>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.MenuController.Update(VirtoCommerce.Content.Web.Models.MenuLinkList)">
+            <summary>
+            Update menu link list
+            </summary>
+            <param name="list">Menu link list</param>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.MenuController.Delete(System.String)">
+            <summary>
+            Delete menu link list
+            </summary>
+            <param name="listId">Menu link list id</param>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.GetStoreContentStats(System.String)">
+            <summary>
+            Return summary content statistic 
+            </summary>
+            <param name="storeId"></param>
+            <returns>Object contains counters with main content types</returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.DeleteContent(System.String,System.String,System.String[])">
+            <summary>
+            Delete content from server
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id </param>
+            <param name="urls">relative content urls to delete</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.GetContentItemDataStream(System.String,System.String,System.String)">
+            <summary>
+            Return streamed data for requested by relativeUrl content (Used to prevent Cross domain requests in manager)
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id</param>
+            <param name="relativeUrl">content relative url</param>
+            <returns>stream</returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.SearchContent(System.String,System.String,System.String,System.String)">
+            <summary>
+            Search content items in specified folder and using search keyword
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id</param>
+            <param name="folderUrl">relative path for folder where content items will be searched</param>
+            <param name="keyword">search keyword</param>
+            <returns>content items</returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.MoveContent(System.String,System.String,System.String,System.String)">
+            <summary>
+            Rename or move content item
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id</param>
+            <param name="oldUrl">old content item relative or absolute url</param>
+            <param name="newUrl">new content item relative or absolute url</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.CopyContent(System.String,System.String)">
+            <summary>
+            Copy contents
+            </summary>
+            <param name="srcPath">source content  relative path</param>
+            <param name="destPath">destination content relative path</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.Unpack(System.String,System.String,System.String,System.String)">
+            <summary>
+            Unpack contents
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id</param>
+            <param name="archivePath">archive file relative path</param>
+            <param name="destPath">destination content relative path</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.CreateContentFolder(System.String,System.String,VirtoCommerce.Content.Web.Models.ContentFolder)">
+            <summary>
+            Create content folder 
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id</param>
+            <param name="folder">content folder</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Content.Web.Controllers.Api.ContentController.UploadContent(System.String,System.String,System.String,System.String)">
+            <summary>
+            Upload content item 
+            </summary>
+            <param name="contentType">possible values Themes or Pages</param>
+            <param name="storeId">Store id</param>
+            <param name="folderUrl">folder relative url where content will be uploaded</param>
+            <param name="url">external url which will be used to download content item data</param>
+            <returns></returns>
+        </member>
+        <member name="T:VirtoCommerce.Content.Web.Models.ContentFile">
+            <summary>
+            Represent content file
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Content.Web.Models.ContentFolder">
+            <summary>
+            Represent content folder
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Content.Web.Models.ContentItem">
+            <summary>
+            Base class for content items
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.ContentItem.Type">
+            <summary>
+            content item type (ContentFile, ContentFolder etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.ContentItem.Url">
+            <summary>
+            Absolute url (which may be used to acccess or download content item directly)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.ContentItem.RelativeUrl">
+            <summary>
+            Relative content item url for access only through provider 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.ContentItem.ParentUrl">
+            <summary>
+            Parent folder url
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Content.Web.Models.ContentStatistic">
+            <summary>
+            Represent a summary content statistics 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.Title">
+            <summary>
+            Title of menu link element, displayed as link text or link title
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.Url">
+            <summary>
+            Url of menu link element, inserts in href attribute of link
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.Priority">
+            <summary>
+            Priority of menu link element, the higher the value, the higher in the list
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.IsActive">
+            <summary>
+            If true - will displayed in the list, if false - not
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.AssociatedObjectId">
+            <summary>
+            Each link element can have an associated object like Product, Category, Promotion, etc.
+            Is a primary key of associated object
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.AssociatedObjectName">
+            <summary>
+            Display name for associated object
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLink.AssociatedObjectType">
+            <summary>
+            Associated object type
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLinkList.Name">
+            <summary>
+            Name of menu link list, can be used as title of list in frontend
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLinkList.StoreId">
+            <summary>
+            Store identifier, for which the list belongs
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.Models.MenuLinkList.Language">
+            <summary>
+            Locale of this menu link list
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Content.Web.Security.ContentSelectedStoreScope">
+            <summary>
+            Restricted to permission within selected stores
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLink.Title">
+            <summary>
+            Title of menu link element, displayed as link text or link title
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLink.Url">
+            <summary>
+            Url of menu link element, inserts in href attribute of link
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLink.Priority">
+            <summary>
+            Priority of menu link element, the higher the value, the higher in the list
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLink.IsActive">
+            <summary>
+            If true - will displayed in the list, if false - not
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLinkList.Name">
+            <summary>
+            Name of menu link list, can be used as title of list in frontend
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLinkList.StoreId">
+            <summary>
+            Store identifier, for which the list belongs
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Content.Web.ExportImport.MenuLinkList.Language">
+            <summary>
+            Locale of this menu link list
+            </summary>
+        </member>
+    </members>
+</doc>

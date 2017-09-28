@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.StoreModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.SearchStores(VirtoCommerce.Domain.Store.Model.SearchCriteria)">
+            <summary>
+            Search stores
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.GetStores">
+            <summary>
+            Get all stores
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.GetStoreById(System.String)">
+            <summary>
+            Get store by id
+            </summary>
+            <param name="id">Store id</param>
+            <responce code="404">Store not found</responce>
+            <responce code="200">Store returned successfully OK</responce>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.Create(VirtoCommerce.StoreModule.Web.Model.Store)">
+            <summary>
+            Create store
+            </summary>
+            <param name="store">Store</param>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.Update(VirtoCommerce.StoreModule.Web.Model.Store)">
+            <summary>
+            Update store
+            </summary>
+            <param name="store">Store</param>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.Delete(System.String[])">
+            <summary>
+            Delete stores
+            </summary>
+            <param name="ids">Ids of store that needed to delete</param>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.SendDynamicNotificationAnStoreEmail(VirtoCommerce.StoreModule.Web.Model.SendDynamicNotificationRequest)">
+            <summary>
+            Send dynamic notification (contains custom list of properties) an store or adminsitrator email 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.GetLoginOnBehalfInfo(System.String,System.String)">
+            <summary>
+            Check if given contact has login on behalf permission
+            </summary>
+            <param name="storeId">Store ID</param>
+            <param name="id">Contact ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.StoreModule.Web.Controllers.Api.StoreModuleController.GetUserAllowedStores(System.String)">
+            <summary>
+            Returns list of stores which user can sign in
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.Line1">
+            <summary>
+            Part of fulfillment center address, line1
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.Line2">
+            <summary>
+            Part of fulfillment center address, line2
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.City">
+            <summary>
+            Part of fulfillment center address, city
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.StateProvince">
+            <summary>
+            Part of fulfillment center address, state province
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.CountryCode">
+            <summary>
+            Part of fulfillment center address, country code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.CountryName">
+            <summary>
+            Part of fulfillment center address, country name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.FulfillmentCenter.PostalCode">
+            <summary>
+            Part of fulfillment center address, postal code
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.StoreModule.Web.Model.LoginOnBehalfInfo">
+            <summary>
+            Represent result for checking of possibility login on behalf request
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.PaymentMethod.Code">
+            <summary>
+            Inner unique method code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.PaymentMethod.Name">
+            <summary>
+            Display name of payment method
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.PaymentMethod.LogoUrl">
+            <summary>
+            Absolute logo url of shipping method, can be used in UI
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.PaymentMethod.IsActive">
+            <summary>
+            If true - method can be available on storefront
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.ShippingMethod.Code">
+            <summary>
+            Inner unique method code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.ShippingMethod.Name">
+            <summary>
+            Display name of shipping method
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.ShippingMethod.LogoUrl">
+            <summary>
+            Absolute logo url of shipping method, can be used in UI
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.ShippingMethod.IsActive">
+            <summary>
+            If true - method can be available on storefront
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.ShippingMethod.TaxType">
+            <summary>
+            Type of tax
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.Url">
+            <summary>
+            Url of store storefront, required
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.StoreState">
+            <summary>
+            State of store
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.DefaultLanguage">
+            <summary>
+            Default locale of store
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.DefaultCurrency">
+            <summary>
+            Default currency of store. Use ISO 4217 currency codes
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.Catalog">
+            <summary>
+            Product catalog id of store
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.SecureUrl">
+            <summary>
+            Secure url of store, must use https protocol, required
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.Email">
+            <summary>
+            Contact email of store
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.AdminEmail">
+            <summary>
+            Administrator contact email of store
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.DisplayOutOfStock">
+            <summary>
+            If true - store shows product with status out of stock
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.Languages">
+            <summary>
+            All store supported languages
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.Currencies">
+            <summary>
+            All store supported currencies
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Store.TrustedGroups">
+            <summary>
+            All linked stores (their accounts can be reused here)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Setting.Name">
+            <summary>
+            System name (ID) of the setting
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Setting.Value">
+            <summary>
+            Current value for non-array setting
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Setting.AllowedValues">
+            <summary>
+            Predefined set of allowed values for this setting
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Setting.IsArray">
+            <summary>
+            Defines whether the setting can have multiple values
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Setting.ArrayValues">
+            <summary>
+            Current values for array setting
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.Setting.Title">
+            <summary>
+            User-friendly name of the setting
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.TaxProvider.Code">
+            <summary>
+            Inner unique method code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.TaxProvider.Name">
+            <summary>
+            Display name of shipping method
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.TaxProvider.LogoUrl">
+            <summary>
+            Absolute logo url of shipping method, can be used in UI
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.StoreModule.Web.Model.TaxProvider.IsActive">
+            <summary>
+            If true - method can be available on storefront
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.StoreModule.Web.Security.StoreSelectedScope">
+            <summary>
+            Restricted to permission within selected stores
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.PricingModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.EvaluatePrices(VirtoCommerce.Domain.Pricing.Model.PriceEvaluationContext)">
+            <summary>
+            Evaluate prices by given context
+            </summary>
+            <param name="evalContext">Pricing evaluation context</param>
+            <returns>Prices array</returns>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.EvaluatePriceLists(VirtoCommerce.Domain.Pricing.Model.PriceEvaluationContext)">
+            <summary>
+            Evaluate pricelists by given context
+            </summary>
+            <param name="evalContext">Pricing evaluation context</param>
+            <returns>Pricelist array</returns>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetPricelistAssignmentById(System.String)">
+            <summary>
+            Get pricelist assignment
+            </summary>
+            <param name="id">Pricelist assignment id</param>
+            <response code="200"></response>
+            <response code="404">Pricelist assignment not found.</response>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetPricelistAssignments">
+            <summary>
+            Get pricelist assignments
+            </summary>
+            <remarks>Get array of all pricelist assignments for all catalogs.</remarks>
+            <todo>Do we need return for all catalogs?</todo>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetNewPricelistAssignments">
+            <summary>
+            Get a new pricelist assignment
+            </summary>
+            <remarks>Get a new pricelist assignment object. Create new pricelist assignment, but does not save one.</remarks>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.CreatePricelistAssignment(VirtoCommerce.PricingModule.Web.Model.PricelistAssignment)">
+            <summary>
+            Create pricelist assignment
+            </summary>
+            <param name="assignment">PricelistAssignment</param>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.UpdatePriceListAssignment(VirtoCommerce.PricingModule.Web.Model.PricelistAssignment)">
+            <summary>
+            Update pricelist assignment
+            </summary>
+            <param name="assignment">PricelistAssignment</param>
+            <response code="204">Operation completed.</response>
+            <todo>Return no any reason if can't update</todo>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.DeleteAssignments(System.String[])">
+            <summary>
+            Delete pricelist assignments
+            </summary>
+            <remarks>Delete pricelist assignment by given array of ids.</remarks>
+            <param name="ids">An array of pricelist assignment ids</param>
+            <response code="204">Operation completed.</response>
+            <todo>Return no any reason if can't update</todo>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetProductPrices(System.String)">
+            <summary>
+            Get array of product prices
+            </summary>
+            <remarks>Get an array of valid product prices for each currency.</remarks>
+            <param name="productId">Product id</param>
+            <response code="200"></response>
+            <response code="404">Prices not found.</response>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetPriceLists">
+            <summary>
+            Get pricelists
+            </summary>
+            <remarks>Get all pricelists for all catalogs.</remarks>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetPriceListById(System.String)">
+            <summary>
+            Get pricelist
+            </summary>
+            <param name="id">Pricelist id</param>
+            <response code="200"></response>
+            <response code="404">Pricelist not found.</response>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.GetProductPriceLists(System.String)">
+            <summary>
+            Get pricelists for a product
+            </summary>
+            <remarks>Get all pricelists for given product.</remarks>
+            <param name="productId">Product id</param>
+            <response code="200"></response>
+            <response code="404">Pricelists not found.</response>
+            <todo>I don't understand inherite algorithm. If product has two prices but variation has only one, then how (if need) variation does pick up inherite product prices</todo>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.CreatePriceList(VirtoCommerce.PricingModule.Web.Model.Pricelist)">
+            <summary>
+            Create pricelist
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.UpdatePriceList(VirtoCommerce.PricingModule.Web.Model.Pricelist)">
+            <summary>
+            Update pricelist
+            </summary>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.UpdateProductPriceLists(System.String,VirtoCommerce.PricingModule.Web.Model.Pricelist)">
+            <summary>
+            Update prices  
+            </summary>
+            <remarks>Update prices of product for given pricelist.</remarks>
+            <param name="productId">Product id</param>
+            <param name="priceList">Pricelist with new product prices</param>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.PricingModule.Web.Controllers.Api.PricingModuleController.DeletePriceLists(System.String[])">
+            <summary>
+            Delete pricelists  
+            </summary>
+            <remarks>Delete pricelists by given array of pricelist ids.</remarks>
+            <param name="ids">An array of pricelist ids</param>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.ProductPrice.Prices">
+            <summary>
+            List prices for the products. It includes tiered prices also. (Depending on the quantity, for example)
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.PricingModule.Web.Model.Price">
+            <summary>
+            Represents a price of a Product in depends on batch quantity.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.Price.Sale">
+            <summary>
+            Sale price of a product. It can be null, then Sale price will be equal List price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.Price.List">
+            <summary>
+            Price of a product. It can be catalog price or purchase price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.Price.MinQuantity">
+            <summary>
+            It defines the minimum quantity of Products. Use it for creating tier prices.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.Pricelist.Currency">
+            <summary>
+            Currency defined for all prices in the price list
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.Pricelist.ProductPrices">
+            <summary>
+            List of Products prices. It includes tiered prices also
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.Pricelist.Assignments">
+            <summary>
+            Assignments define condition and rules to use the price list
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.PricelistAssignment.Priority">
+            <summary>
+            If two PricelistAssignments satisfies the conditions and rules, will use one with the greater priority
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.PricelistAssignment.StartDate">
+            <summary>
+            Start of period when Prices Assignment is valid. Null value means no limit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.PricelistAssignment.EndDate">
+            <summary>
+            End of period when Prices Assignment is valid. Null value means no limit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.PricingModule.Web.Model.PricelistAssignment.DynamicExpression">
+            <summary>
+            List of conditions and rules to define Prices Assignment is valid
+            </summary>
+        </member>
+    </members>
+</doc>

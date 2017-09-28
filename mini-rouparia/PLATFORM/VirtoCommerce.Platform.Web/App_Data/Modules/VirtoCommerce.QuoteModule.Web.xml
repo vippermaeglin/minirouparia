@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.QuoteModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.Search(VirtoCommerce.Domain.Quote.Model.QuoteRequestSearchCriteria)">
+            <summary>
+            Search RFQ by given criteria
+            </summary>
+            <param name="criteria">criteria</param>
+        </member>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.GetById(System.String)">
+            <summary>
+            Get RFQ by id
+            </summary>
+            <remarks>Return a single RFQ</remarks>
+            <param name="id">RFQ id</param>
+        </member>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.Create(VirtoCommerce.QuoteModule.Web.Model.QuoteRequest)">
+            <summary>
+             Create new RFQ
+            </summary>
+            <param name="quoteRequest">RFQ</param>
+        </member>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.Update(VirtoCommerce.QuoteModule.Web.Model.QuoteRequest)">
+            <summary>
+             Update a existing RFQ
+            </summary>
+            <param name="quoteRequest">RFQ</param>
+        </member>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.CalculateTotals(VirtoCommerce.QuoteModule.Web.Model.QuoteRequest)">
+            <summary>
+            Calculate totals
+            </summary>
+            <remarks>Return totals for selected tier prices</remarks>
+            <param name="quoteRequest">RFQ</param>
+        </member>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.GetShipmentMethods(System.String)">
+            <summary>
+            Get available shipping methods with prices for quote requests
+            </summary>
+            <param name="id">RFQ id</param>
+        </member>
+        <member name="M:VirtoCommerce.QuoteModule.Web.Controllers.Api.QuoteModuleController.Delete(System.String[])">
+            <summary>
+            Deletes the specified quotes by id.
+            </summary>
+            <param name="ids">The quotes ids.</param>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteItem.ListPrice">
+            <summary>
+            Base catalog price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteItem.SalePrice">
+            <summary>
+            Sale price for buyer
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteItem.SelectedTierPrice">
+            <summary>
+            Selected proposal tier price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteItem.ProposalPrices">
+            <summary>
+            Proposal tier prices
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest">
+            <summary>
+             Request for quotation (RFQ) is a standard business process whose purpose is to invite suppliers into a
+             bidding process to bid on specific products or services. 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.Number">
+            <summary>
+            Unique user friendly document number (generate automatically based on special algorithm realization)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.EmployeeId">
+            <summary>
+            Id employee who responsible for processing RFQ
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.EmployeeName">
+            <summary>
+            Employee who responsible for processing RFQ
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ExpirationDate">
+            <summary>
+            Date when RFQ will be expired
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ReminderDate">
+            <summary>
+            Date used for notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.EnableNotification">
+            <summary>
+            Flag of managing the need to send notifications
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.IsLocked">
+            <summary>
+            If is set it restrict any changes on RFQ
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.Tag">
+            <summary>
+            Tag for auxiliary information
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.Comment">
+            <summary>
+            Public comment visible for customer 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.InnerComment">
+            <summary>
+            Private comment not visible to customer
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.Totals">
+            <summary>
+            Resulting totals for selected proposals
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ManualShippingTotal">
+            <summary>
+            Manual shipping total for quote request
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ManualSubTotal">
+            <summary>
+            Manual sub total for quote request
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ManualRelDiscountAmount">
+            <summary>
+            Relative manual discount amount for quote request in percent
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ShipmentMethod">
+            <summary>
+            Predefined shipment method used for delivery order created from current RFQ
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.Items">
+            <summary>
+            RFQ items
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequest.ObjectType">
+            <summary>
+            System property
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequestTotals.OriginalSubTotalExlTax">
+            <summary>
+            Original subtotal tier quantity * sale price 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequestTotals.SubTotalExlTax">
+            <summary>
+            Items proposal tier quantity * proposal price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequestTotals.AdjustmentQuoteExlTax">
+            <summary>
+            Adjustment SubTotalOriginalExlTax -  SubTotalExlTax
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequestTotals.GrandTotalExlTax">
+            <summary>
+            Grand total SubTotalExlTax + shipping - discount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.QuoteModule.Web.Model.QuoteRequestTotals.GrandTotalInclTax">
+            <summary>
+            Grand total subtotal + shipping - discount + tax
+            </summary>
+        </member>
+    </members>
+</doc>

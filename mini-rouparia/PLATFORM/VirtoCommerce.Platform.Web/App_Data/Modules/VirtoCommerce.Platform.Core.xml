@@ -1,0 +1,2691 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.Platform.Core</name>
+    </assembly>
+    <members>
+        <member name="T:VirtoCommerce.Platform.Core.Assets.BlobConnectionString">
+            <summary>
+            Represent blob resources connection string which can contains complex part as Provider, basepath etc
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Assets.BlobConnectionString.RootPath">
+            <summary>
+            Chroot path. Base for blob resources
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Assets.BlobConnectionString.PublicUrl">
+            <summary>
+            Blob public base url which blobs can be gets
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Assets.BlobConnectionString.ConnectionString">
+            <summary>
+            Rest part of connection string without Provider, RootPath and PublicUrl parameters
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Assets.BlobInfo.Key">
+            <summary>
+            Relative url
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Assets.BlobInfo.Url">
+            <summary>
+            Absolute url
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider">
+            <summary>
+            Represent abstraction for working with binary data
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider.Search(System.String,System.String)">
+            <summary>
+            Search blobs by specified criteria
+            </summary>
+            <param name="folderUrl"></param>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider.GetBlobInfo(System.String)">
+            <summary>
+            Get blog info by url
+            </summary>
+            <param name="blobUrl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider.CreateFolder(VirtoCommerce.Platform.Core.Assets.BlobFolder)">
+            <summary>
+            Create blob folder in specified provider
+            </summary>
+            <param name="folder"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider.OpenRead(System.String)">
+            <summary>
+            Open blob for reading
+            </summary>
+            <param name="blobUrl">Realative or absolute blob url (tmp/blob.txt) </param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider.OpenWrite(System.String)">
+            <summary>
+            Open blob for writing
+            </summary>
+            <param name="blobUrl">Realative or absolute blob url (tmp/blob.txt)</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Assets.IBlobStorageProvider.Remove(System.String[])">
+            <summary>
+            Remove secified blobs
+            </summary>
+            <param name="urls"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.EnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Indicates whether the specified enumerable is null or has a length of zero.</summary>
+            <param name="data">The data to test.</param>
+            <returns>true if the array parameter is null or has a length of zero; otherwise, false.</returns>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.ConfigManagerExtensions">
+            <summary>
+            http://softwarebydefault.com/code-samples/extending-configurationmanager-get-values-by-type/
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.IFactory">
+            <summary>
+            Abstraction for any factories
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.PrimaryKeyResolvingMap">
+            <summary>
+            Helper class used for resolving model object primary keys when it presisted in persistent infrastructure
+            Used in model to db model converters
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.SemanticVersion.Major">
+            <summary>
+            Major version X (X.y.z)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.SemanticVersion.Minor">
+            <summary>
+            Minor version Y (x.Y.z)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.SemanticVersion.Patch">
+            <summary>
+            Patch version Z (x.y.Z)
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.SerializationExtension.SerializeXml``1(``0)">
+            <summary>
+            Extension method that takes objects and serialized them.
+            </summary>
+            <typeparam name="T">The type of the object to be serialized.</typeparam>
+            <param name="source">The object to be serialized.</param>
+            <returns>A string that represents the serialized XML.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.SerializationExtension.DeserializeXml``1(System.String)">
+            <summary>
+            Extension method to string which attempts to deserialize XML with the same name as the source string.
+            </summary>
+            <typeparam name="T">The type which to be deserialized to.</typeparam>
+            <param name="xml">The source string</param>
+            <returns>The deserialized object, or null if unsuccessful.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.AnonymousComparer.Create``1(System.Func{``0,``0,System.Int32})">
+            <summary>Example:AnonymousComparer.Create&lt;int&gt;((x, y) => y - x)</summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.AnonymousComparer.Create``2(System.Func{``0,``1})">
+            <summary>Example:AnonymousComparer.Create((MyClass mc) => mc.MyProperty)</summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.Entity.Equals(System.Object)">
+            <summary>
+            <see cref="M:System.Object.Equals"/>
+            </summary>
+            <param name="obj"><see cref="M:System.Object.Equals"/></param>
+            <returns><see cref="M:System.Object.Equals"/></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.Entity.GetHashCode">
+            <summary>
+            <see cref="M:System.Object.GetHashCode"/>
+            </summary>
+            <returns><see cref="M:System.Object.GetHashCode"/></returns>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.IRepository">
+            <summary>
+            Repository interface. Provides base interface for all repositories used in the framework.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.IRepository.UnitOfWork">
+            <summary>
+            Gets the unit of work. This class actually saves the data into underlying storage.
+            </summary>
+            <value>
+            The unit of work.
+            </value>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.Attach``1(``0)">
+            <summary>
+            Attaches the specified item to the context that is tracking objects.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.IsAttachedTo``1(``0)">
+            <summary>
+            Determines whether the specified item already exists in the tracking context.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+            <returns>
+              <c>true</c> if [is attached to] [the specified item]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.Add``1(``0)">
+            <summary>
+            Adds the specified item to the context in the Added state. Meaning item will be created in the underlying storage.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.Update``1(``0)">
+            <summary>
+            Updates the specified item. Marks the item for the update.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.Remove``1(``0)">
+            <summary>
+            Removes the specified item. Item marked for deletion and will be removed from the underlying storage on save.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.GetAsQueryable``1">
+            <summary>
+            Gets as queryable representation of the specified type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.IRepository.Refresh(System.Collections.IEnumerable)">
+            <summary>
+            Refreshes the specified collection.
+            </summary>
+            <param name="collection">The collection.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.KeyValuePairExtensions.WithKey``2(System.Collections.Generic.KeyValuePair{``0,``1},``0)">
+            <summary>
+            Withes the key.
+            </summary>
+            <typeparam name="TK">The type of the tk.</typeparam>
+            <typeparam name="TV">The type of the tv.</typeparam>
+            <param name="kv">The kv.</param>
+            <param name="newKey">The new key.</param>
+            <returns>KeyValuePair{``0``1}.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.KeyValuePairExtensions.WithValue``2(System.Collections.Generic.KeyValuePair{``0,``1},``1)">
+            <summary>
+            Withes the value.
+            </summary>
+            <typeparam name="TK">The type of the tk.</typeparam>
+            <typeparam name="TV">The type of the tv.</typeparam>
+            <param name="kv">The kv.</param>
+            <param name="newValue">The new value.</param>
+            <returns>KeyValuePair{``0``1}.</returns>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.ListDictionary`2">
+            <summary>
+            A dictionary of lists.
+            </summary>
+            <typeparam name="TKey">The key to use for lists.</typeparam>
+            <typeparam name="TValue">The type of the value held by lists.</typeparam>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Add(`0)">
+            <summary>
+            If a list does not already exist, it will be created automatically.
+            </summary>
+            <param name="key">The key of the list that will hold the value.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Add(`0,`1)">
+            <summary>
+            Adds a value to a list with the given key. If a list does not already exist, 
+            it will be created automatically.
+            </summary>
+            <param name="key">The key of the list that will hold the value.</param>
+            <param name="value">The value to add to the list under the given key.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Clear">
+            <summary>
+            Removes all entries in the dictionary.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.ContainsValue(`1)">
+            <summary>
+            Determines whether the dictionary contains the specified value.
+            </summary>
+            <param name="value">The value to locate.</param>
+            <returns>true if the dictionary contains the value in any list; otherwise, false.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.ContainsKey(`0)">
+            <summary>
+            Determines whether the dictionary contains the given key.
+            </summary>
+            <param name="key">The key to locate.</param>
+            <returns>true if the dictionary contains the given key; otherwise, false.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.FindAllValuesByKey(System.Predicate{`0})">
+            <summary>
+            Retrieves the all the elements from the list which have a key that matches the condition 
+            defined by the specified predicate.
+            </summary>
+            <param name="keyFilter">The filter with the condition to use to filter lists by their key.</param>
+            <returns>The elements that have a key that matches the condition defined by the specified predicate.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.FindAllValues(System.Predicate{`1})">
+            <summary>
+            Retrieves all the elements that match the condition defined by the specified predicate.
+            </summary>
+            <param name="valueFilter">The filter with the condition to use to filter values.</param>
+            <returns>The elements that match the condition defined by the specified predicate.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Remove(`0)">
+            <summary>
+            Removes a list by key.
+            </summary>
+            <param name="key">The key of the list to remove.</param>
+            <returns><see langword="true" /> if the element was removed.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Remove(`0,`1)">
+            <summary>
+            Removes a value from the list with the given key.
+            </summary>
+            <param name="key">The key of the list where the value exists.</param>
+            <param name="value">The value to remove.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Remove(`1)">
+            <summary>
+            Removes a value from all lists where it may be found.
+            </summary>
+            <param name="value">The value to remove.</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Values">
+            <summary>
+            Gets a shallow copy of all values in all lists.
+            </summary>
+            <value>List of values.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Keys">
+            <summary>
+            Gets the list of keys in the dictionary.
+            </summary>
+            <value>Collection of keys.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Item(`0)">
+            <summary>
+            Gets or sets the list associated with the given key. The 
+            access always succeeds, eventually returning an empty list.
+            </summary>
+            <param name="key">The key of the list to access.</param>
+            <returns>The list associated with the key.</returns>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.ListDictionary`2.Count">
+            <summary>
+            Gets the number of lists in the dictionary.
+            </summary>
+            <value>Value indicating the values count.</value>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IList{TValue}}#Add(`0,System.Collections.Generic.IList{`1})">
+            <summary>
+            See <see cref="M:System.Collections.Generic.IDictionary`2.Add(`0,`1)"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IList{TValue}}#TryGetValue(`0,System.Collections.Generic.IList{`1}@)">
+            <summary>
+            See <see cref="M:System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)"/> for more information.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#IDictionary{TKey,System#Collections#Generic#IList{TValue}}#Values">
+            <summary>
+            See <see cref="P:System.Collections.Generic.IDictionary`2.Values"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IList{TValue}}}#Add(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IList{`1}})">
+            <summary>
+            See <see cref="M:System.Collections.Generic.ICollection`1.Add(`0)"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IList{TValue}}}#Contains(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IList{`1}})">
+            <summary>
+            See <see cref="M:System.Collections.Generic.ICollection`1.Contains(`0)"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IList{TValue}}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IList{`1}}[],System.Int32)">
+            <summary>
+            See <see cref="M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)"/> for more information.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IList{TValue}}}#IsReadOnly">
+            <summary>
+            See <see cref="P:System.Collections.Generic.ICollection`1.IsReadOnly"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IList{TValue}}}#Remove(System.Collections.Generic.KeyValuePair{`0,System.Collections.Generic.IList{`1}})">
+            <summary>
+            See <see cref="M:System.Collections.Generic.ICollection`1.Remove(`0)"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#Generic#IEnumerable{System#Collections#Generic#KeyValuePair{TKey,System#Collections#Generic#IList{TValue}}}#GetEnumerator">
+            <summary>
+            See <see cref="M:System.Collections.Generic.IEnumerable`1.GetEnumerator"/> for more information.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ListDictionary`2.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            See <see cref="M:System.Collections.IEnumerable.GetEnumerator"/> for more information.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.CollectionExtensions">
+            <summary>
+            Class that provides extension methods to Collection
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Add a range of items to a collection.
+            </summary>
+            <typeparam name="T">Type of objects within the collection.</typeparam>
+            <param name="collection">The collection to add items to.</param>
+            <param name="items">The items to add to the collection.</param>
+            <returns>The collection.</returns>
+            <exception cref="T:System.ArgumentNullException">An <see cref="T:System.ArgumentNullException"/> is thrown if <paramref name="collection"/> or <paramref name="items"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Common.MimeTypeResolver._mapping">
+            <summary>
+            https://github.com/samuelneff/MimeTypeMap
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.ObjectExtensions">
+            <summary>
+                Extension methods applied to the <see cref="T:System.Object"/> type.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ObjectExtensions.GetHash``1(System.Object)">
+            <summary>
+                Gets a hash of the current instance.
+            </summary>
+            <typeparam name="T">
+                The type of the Cryptographic Service Provider to use.
+            </typeparam>
+            <param name="instance">
+                The instance being extended.
+            </param>
+            <returns>
+                A base 64 encoded string representation of the hash.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ObjectExtensions.GetKeyedHash``1(System.Object,System.Byte[])">
+            <summary>
+                Gets a key based hash of the current instance.
+            </summary>
+            <typeparam name="T">
+                The type of the Cryptographic Service Provider to use.
+            </typeparam>
+            <param name="instance">
+                The instance being extended.
+            </param>
+            <param name="key">
+                The key passed into the Cryptographic Service Provider algorithm.
+            </param>
+            <returns>
+                A base 64 encoded string representation of the hash.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ObjectExtensions.GetMD5Hash(System.Object)">
+            <summary>
+                Gets a MD5 hash of the current instance.
+            </summary>
+            <param name="instance">
+                The instance being extended.
+            </param>
+            <returns>
+                A base 64 encoded string representation of the hash.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ObjectExtensions.GetSHA1Hash(System.Object)">
+            <summary>
+                Gets a SHA1 hash of the current instance.
+            </summary>
+            <param name="instance">
+                The instance being extended.
+            </param>
+            <returns>
+                A base 64 encoded string representation of the hash.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.IfNullOrEmpty(System.String,System.String)">
+            <summary>
+            Like null coalescing operator (??) but including empty strings
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.EmptyToNull(System.String)">
+            <summary>
+            If <paramref name="a"/> is empty, returns null
+            </summary>
+            <param name="a"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.EqualsOrNullEmpty(System.String,System.String,System.StringComparison)">
+            <summary>
+            Equalses the or null empty.
+            </summary>
+            <param name="str1">The STR1.</param>
+            <param name="str2">The STR2.</param>
+            <param name="comparisonType">Type of the comparison.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.EqualsInvariant(System.String,System.String)">
+            <summary>
+            Equals invariant
+            </summary>
+            <param name="str1">The STR1.</param>
+            <param name="str2">The STR2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.EscapeSelector(System.String)">
+            <summary>
+            Escapes the selector. Query requires special characters to be escaped in query
+            http://api.jquery.com/category/selectors/
+            </summary>
+            <param name="attribute">The attribute.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.MakeFileNameWebSafe(System.String)">
+            <summary>
+            Only english characters,
+            Numbers are allowed,  
+            Dashes are allowed, 
+            Spaces are replaced by dashes, 
+            Nothing else is allowed,
+            Possibly you could replace ;amp by "-and-"
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.StringExtensions.ComputeLevenshteinDistance(System.String,System.String)">
+            <summary>
+            Compute the distance between two strings.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Common.ValueObject`1">
+            <summary>
+            Base class for value objects in domain.
+            Value
+            </summary>
+            <typeparam name="TValueObject">The type of this value object</typeparam>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ValueObject`1.Equals(`0)">
+            <summary>
+            <see cref="M:System.Object.IEquatable{TValueObject}"/>
+            </summary>
+            <param name="other"><see cref="M:System.Object.IEquatable{TValueObject}"/></param>
+            <returns><see cref="M:System.Object.IEquatable{TValueObject}"/></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ValueObject`1.Equals(System.Object)">
+            <summary>
+            <see cref="M:System.Object.Equals"/>
+            </summary>
+            <param name="obj"><see cref="M:System.Object.Equals"/></param>
+            <returns><see cref="M:System.Object.Equals"/></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Common.ValueObject`1.GetHashCode">
+            <summary>
+            <see cref="M:System.Object.GetHashCode"/>
+            </summary>
+            <returns><see cref="M:System.Object.GetHashCode"/></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.DynamicPropertiesExtensions.CopyPropertyValuesFrom(VirtoCommerce.Platform.Core.DynamicProperties.IHasDynamicProperties,VirtoCommerce.Platform.Core.DynamicProperties.IHasDynamicProperties)">
+            <summary>
+            Copies property values from one object to other using for comparison property name and type
+            </summary>
+            <param name="sourceOwner"></param>
+            <param name="targetOwner"></param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicProperty.IsArray">
+            <summary>
+            Defines whether a property supports multiple values.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicProperty.IsDictionary">
+            <summary>
+            Dictionary has a predefined set of values. User can select one or more of them and cannot enter arbitrary values.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicProperty.IsMultilingual">
+            <summary>
+            For multilingual properties user can enter different values for each of registered languages.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicProperty.DisplayNames">
+            <summary>
+            Property names for different languages.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicPropertyDictionaryItem.DisplayNames">
+            <summary>
+            Item names for different languages.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicPropertyName.Locale">
+            <summary>
+            Language ID, e.g. en-US.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.DynamicProperties.DynamicPropertyDictionaryItemName.Locale">
+            <summary>
+            Language ID, e.g. en-US.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService">
+            <summary>
+            Represent runtime object extension functionality based on properties meta-information 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.RegisterType(System.String)">
+            <summary>
+            Register new type name which can support dynamic properties
+            </summary>
+            <param name="typeName"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.GetAvailableObjectTypeNames">
+            <summary>
+            Return all available types names supported dynamic properties
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.GetObjectTypeName(System.Type)">
+            <summary>
+            Return string type name
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.GetProperties(System.String)">
+            <summary>
+            Return all dynamic properties defined for type
+            </summary>
+            <param name="objectType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.SaveProperties(VirtoCommerce.Platform.Core.DynamicProperties.DynamicProperty[])">
+            <summary>
+            Update or create dynamic properties 
+            </summary>
+            <param name="properties"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.LoadDynamicPropertyValues(VirtoCommerce.Platform.Core.DynamicProperties.IHasDynamicProperties)">
+            <summary>
+            Deep loads and populate dynamic properties values for object
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.DynamicProperties.IDynamicPropertyService.SaveDynamicPropertyValues(VirtoCommerce.Platform.Core.DynamicProperties.IHasDynamicProperties)">
+            <summary>
+            Deep save dynamic properties values for object
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Events.IEventPublisher`1.Publish(`0)">
+            <summary>
+            Publish event
+            </summary>
+            <param name="eventMessage">Event message</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.ExportImport.PlatformExportManifest.HandleSettings">
+            <summary>
+            Export or import modules settings
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.ExportImport.PlatformExportManifest.HandleSecurity">
+            <summary>
+            Export or import security objects
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.ExportImport.PlatformExportManifest.HandleBinaryData">
+            <summary>
+            Flag means the use of  binary data in export or import operations
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.ExportImport.PlatformExportManifest.Modules">
+            <summary>
+            List of all exported or imported modules
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver">
+            <summary>
+            Handles AppDomain's AssemblyResolve event to be able to load assemblies dynamically in 
+            the LoadFrom context, but be able to reference the type from assemblies loaded in the Load context.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver.LoadAssemblyFrom(System.String)">
+            <summary>
+            Registers the specified assembly and resolves the types in it when the AppDomain requests for it.
+            </summary>
+            <param name="assemblyFilePath">The path to the assemly to load in the LoadFrom context.</param>
+            <remarks>This method does not load the assembly immediately, but lazily until someone requests a <see cref="T:System.Type"/>
+            declared in the assembly.</remarks>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <remarks>Calls <see cref="M:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver.Dispose(System.Boolean)"/></remarks>.
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver.Dispose(System.Boolean)">
+            <summary>
+            Disposes the associated <see cref="T:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver"/>.
+            </summary>
+            <param name="disposing">When <see langword="true"/>, it is being called from the Dispose method.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException">
+            <summary>
+            Represents the exception that is thrown when there is a circular dependency
+            between modules during the module loading process.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException"/> class
+            with the specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException"/> class
+            with the specified error message and inner exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes the exception with a particular module, error message and inner exception that happened.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException">
+            <summary>
+            Exception thrown when a module is declared twice in the same catalog.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException" /> class with a specified error message.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException">
+            <summary>
+            Base class for exceptions that are thrown because of a problem with modules. 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes the exception with a particular module and error message.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes the exception with a particular module, error message and inner exception that happened.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException.ModuleName">
+            <summary>
+            Gets or sets the name of the module that this exception refers to.
+            </summary>
+            <value>The name of the module.</value>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInfoGroupExtensions">
+            <summary>
+            Defines extension methods for the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInfoGroupExtensions.AddModule(VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup,System.String,System.Type,System.String[])">
+            <summary>
+            Adds a new module that is statically referenced to the specified module info group.
+            </summary>
+            <param name="moduleInfoGroup">The group where to add the module info in.</param>
+            <param name="moduleName">The name for the module.</param>
+            <param name="moduleType">The type for the module. This type should be a descendant of <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModule"/>.</param>
+            <param name="dependsOn">The names for the modules that this module depends on.</param>
+            <returns>Returns the instance of the passed in module info group, to provide a fluid interface.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInfoGroupExtensions.AddModule(VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup,System.Type,System.String[])">
+            <summary>
+            Adds a new module that is statically referenced to the specified module info group.
+            </summary>
+            <param name="moduleInfoGroup">The group where to add the module info in.</param>
+            <param name="moduleType">The type for the module. This type should be a descendant of <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModule"/>.</param>
+            <param name="dependsOn">The names for the modules that this module depends on.</param>
+            <returns>Returns the instance of the passed in module info group, to provide a fluid interface.</returns>
+            <remarks>The name of the module will be the type name.</remarks>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException">
+            <summary>
+            Exception thrown by <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleInitializer"/> implementations whenever 
+            a module fails to load.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException.#ctor">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException"/> class.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes the exception with a particular module and error message.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="moduleAssembly">The assembly where the module is located.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException.#ctor(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            Initializes the exception with a particular module, error message and inner exception 
+            that happened.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="moduleAssembly">The assembly where the module is located.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleInitializeException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes the exception with a particular module, error message and inner exception that happened.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException">
+            <summary>
+            Exception thrown when a requested <see cref="F:VirtoCommerce.Platform.Core.Modularity.InitializationMode.OnDemand"/> <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModule"/> was not found.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException" /> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException" /> class with a specified error message.
+            </summary>
+            <param name="message">
+            The message that describes the error. 
+            </param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException" /> class with a specified error message.
+            </summary>
+            <param name="message">
+            The message that describes the error. 
+            </param>
+            <param name="innerException">The inner exception</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleNotFoundException" /> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException">
+            <summary>
+            Exception that's thrown when there is no <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader"/> registered in 
+            ModuleManager.ModuleTypeLoaders that can handle this particular type of module. 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException" /> class with a specified error message.
+            </summary>
+            <param name="message">
+            The message that describes the error. 
+            </param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException" /> class with a specified error message.
+            </summary>
+            <param name="message">
+            The message that describes the error. 
+            </param>
+            <param name="innerException">The inner exception</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoaderNotFoundException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes the exception with a particular module, error message and inner exception that happened.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoadingException">
+            <summary>
+            Exception thrown by <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleManager"/> implementations whenever 
+            a module fails to retrieve.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoadingException.#ctor">
+            <summary>
+            Initializes a new instance.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoadingException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance with a specified error message.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoadingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance with a specified error message 
+            and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="exception">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoadingException.#ctor(System.String,System.String)">
+            <summary>
+            Initializes the exception with a particular module and error message.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModuleTypeLoadingException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Initializes the exception with a particular module, error message and inner exception that happened.
+            </summary>
+            <param name="moduleName">The name of the module.</param>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, 
+            or a <see langword="null"/> reference if no inner exception is specified.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.DirectoryModuleCatalog">
+            <summary>
+            Represets a catalog created from a directory on disk.
+            </summary>
+            <remarks>
+            The directory catalog will scan the contents of a directory, locating classes that implement
+            <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModule"/> and add them to the catalog based on contents in their associated <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleAttribute"/>.
+            Assemblies are loaded into a new application domain with ReflectionOnlyLoad.  The application domain is destroyed
+            once the assemblies have been discovered.
+            
+            The diretory catalog does not continue to monitor the directory after it has created the initialze catalog.
+            </remarks>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.DirectoryModuleCatalog.ModulePath">
+            <summary>
+            Directory containing modules to search for.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.DirectoryModuleCatalog.InnerLoad">
+            <summary>
+            Drives the main logic of building the child domain and searching for the assemblies.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.DirectoryModuleCatalog.BuildChildDomain(System.AppDomain)">
+            <summary>
+            Creates a new child domain and copies the evidence from a parent domain.
+            </summary>
+            <param name="parentDomain">The parent domain.</param>
+            <returns>The new child domain.</returns>
+            <remarks>
+            Grabs the <paramref name="parentDomain"/> evidence and uses it to construct the new
+            <see cref="T:System.AppDomain"/> because in a ClickOnce execution environment, creating an
+            <see cref="T:System.AppDomain"/> will by default pick up the partial trust environment of 
+            the AppLaunch.exe, which was the root executable. The AppLaunch.exe does a 
+            create domain and applies the evidence from the ClickOnce manifests to 
+            create the domain that the application is actually executing in. This will 
+            need to be Full Trust for Prism applications.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">An <see cref="T:System.ArgumentNullException"/> is thrown if <paramref name="parentDomain"/> is null.</exception>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader">
+            <summary>
+            Loads modules from an arbitrary location on the filesystem. This typeloader is only called if 
+            <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> classes have a Ref parameter that starts with "file://". 
+            This class is only used on the Desktop version of the Prism Library.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.#ctor(VirtoCommerce.Platform.Core.Modularity.IAssemblyResolver)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader"/> class.
+            </summary>
+            <param name="assemblyResolver">The assembly resolver.</param>
+        </member>
+        <member name="E:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.ModuleDownloadProgressChanged">
+            <summary>
+            Raised repeatedly to provide progress as modules are loaded in the background.
+            </summary>
+        </member>
+        <member name="E:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.LoadModuleCompleted">
+            <summary>
+            Raised when a module is loaded or fails to load.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.CanLoadModuleType(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Evaluates the <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref"/> property to see if the current typeloader will be able to retrieve the <paramref name="moduleInfo"/>.
+            Returns true if the <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref"/> property starts with "file://", because this indicates that the file
+            is a local file. 
+            </summary>
+            <param name="moduleInfo">Module that should have it's type loaded.</param>
+            <returns>
+            	<see langword="true"/> if the current typeloader is able to retrieve the module, otherwise <see langword="false"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">An <see cref="T:System.ArgumentNullException"/> is thrown if <paramref name="moduleInfo"/> is null.</exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.LoadModuleType(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Retrieves the <paramref name="moduleInfo"/>.
+            </summary>
+            <param name="moduleInfo">Module that should have it's type loaded.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <remarks>Calls <see cref="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.Dispose(System.Boolean)"/></remarks>.
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.FileModuleTypeLoader.Dispose(System.Boolean)">
+            <summary>
+            Disposes the associated <see cref="T:VirtoCommerce.Platform.Core.Modularity.AssemblyResolver"/>.
+            </summary>
+            <param name="disposing">When <see langword="true"/>, it is being called from the Dispose method.</param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IAssemblyResolver">
+            <summary>
+            Interface for classes that are responsible for resolving and loading assembly files. 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IAssemblyResolver.LoadAssemblyFrom(System.String)">
+            <summary>
+            Load an assembly when it's required by the application. 
+            </summary>
+            <param name="assemblyFilePath"></param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IModule">
+            <summary>
+            Defines the contract for the modules deployed in the application.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModule.SetupDatabase">
+            <summary>
+            Allows module to configure database.
+            This method is called before Initialize().
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModule.Initialize">
+            <summary>
+            Notifies the module that it has been initialized.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModule.PostInitialize">
+            <summary>
+            This method is called after all modules have been initialized with Initialize().
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModule.Uninstall">
+            <summary>
+            This method is called before uninstalling the module.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog">
+            <summary>
+            This is the expected catalog definition for the ModuleManager. 
+            The ModuleCatalog holds information about the modules that can be used by the 
+            application. Each module is described in a ModuleInfo class, that records the 
+            name, type and location of the module. 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog.Modules">
+            <summary>
+            Gets all the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> classes that are in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog.GetDependentModules(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Return the list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s that <paramref name="moduleInfo"/> depends on.
+            </summary>
+            <param name="moduleInfo">The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to get the </param>
+            <returns>An enumeration of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> that <paramref name="moduleInfo"/> depends on.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog.CompleteListWithDependencies(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})">
+            <summary>
+            Returns the collection of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s that contain both the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s in 
+            <paramref name="modules"/>, but also all the modules they depend on. 
+            </summary>
+            <param name="modules">The modules to get the dependencies for.</param>
+            <returns>
+            A collection of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> that contains both all <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s in <paramref name="modules"/>
+            and also all the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> they depend on.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog.Initialize">
+            <summary>
+            Initializes the catalog, which may load and validate the modules.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog.AddModule(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Adds a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>.
+            </summary>
+            <param name="moduleInfo">The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to add.</param>
+            <returns>The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> for easily adding multiple modules.</returns>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IModuleCatalogItem">
+            <summary>
+            Marker interface that allows both <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>s and <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s to be
+            added to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleCatalog"/> from code and XAML. 
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IModuleInitializer">
+            <summary>
+            Declares a service which initializes the modules into the application.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleInitializer.Initialize(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Initializes the specified module.
+            </summary>
+            <param name="moduleInfo">The module to initialize</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleInitializer.PostInitialize(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Initializes the module during second iteration through all modules.
+            </summary>
+            <param name="moduleInfo"></param>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IModuleManager">
+            <summary>
+            Defines the interface for the service that will retrieve and initialize the application's modules.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleManager.Run">
+            <summary>
+            Initializes the modules marked as <see cref="F:VirtoCommerce.Platform.Core.Modularity.InitializationMode.WhenAvailable"/> on the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleManager.LoadModule(System.String)">
+            <summary>
+            Loads and initializes the module on the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> with the name <paramref name="moduleName"/>.
+            </summary>
+            <param name="moduleName">Name of the module requested for initialization.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleManager.PostInitializeModule(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Initializes the module during second iteration through all modules.
+            </summary>
+            <param name="moduleInfo"></param>
+        </member>
+        <member name="E:VirtoCommerce.Platform.Core.Modularity.IModuleManager.ModuleDownloadProgressChanged">
+            <summary>
+            Raised repeatedly to provide progress as modules are downloaded.
+            </summary>
+        </member>
+        <member name="E:VirtoCommerce.Platform.Core.Modularity.IModuleManager.LoadModuleCompleted">
+            <summary>
+            Raised when a module is loaded or fails to load.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader">
+            <summary>
+            Defines the interface for moduleTypeLoaders
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader.CanLoadModuleType(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Evaluates the <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref"/> property to see if the current typeloader will be able to retrieve the <paramref name="moduleInfo"/>.
+            </summary>
+            <param name="moduleInfo">Module that should have it's type loaded.</param>
+            <returns><see langword="true"/> if the current typeloader is able to retrieve the module, otherwise <see langword="false"/>.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader.LoadModuleType(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Retrieves the <paramref name="moduleInfo"/>.
+            </summary>
+            <param name="moduleInfo">Module that should have it's type loaded.</param>
+        </member>
+        <member name="E:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader.ModuleDownloadProgressChanged">
+            <summary>
+            Raised repeatedly to provide progress as modules are downloaded in the background.
+            </summary>
+        </member>
+        <member name="E:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader.LoadModuleCompleted">
+            <summary>
+            Raised when a module is loaded or fails to load.
+            </summary>
+            <remarks>
+            This event is raised once per ModuleInfo instance requested in <see cref="M:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader.LoadModuleType(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)"/>.
+            </remarks>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.InitializationMode">
+            <summary>
+            Specifies on which stage the Module group will be initialized.
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.InitializationMode.WhenAvailable">
+            <summary>
+            The module will be initialized when it is available on application start-up.
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.InitializationMode.OnDemand">
+            <summary>
+            The module will be initialized when requested, and not automatically on application start-up.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.LoadModuleCompletedEventArgs">
+            <summary>
+            Provides completion information after a module is loaded, or fails to load.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.LoadModuleCompletedEventArgs.#ctor(VirtoCommerce.Platform.Core.Modularity.ModuleInfo,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.LoadModuleCompletedEventArgs"/> class.
+            </summary>
+            <param name="moduleInfo">The module info.</param>
+            <param name="error">Any error that occurred during the call.</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.LoadModuleCompletedEventArgs.ModuleInfo">
+            <summary>
+            Gets the module info.
+            </summary>
+            <value>The module info.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.LoadModuleCompletedEventArgs.Error">
+            <summary>
+            Gets any error that occurred
+            </summary>
+            <value>The exception if an error occurred; otherwise null.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.LoadModuleCompletedEventArgs.IsErrorHandled">
+            <summary>
+            Gets or sets a value indicating whether the error has been handled by the event subscriber.
+            </summary>
+            <value><c>true</c>if the error is handled; otherwise, <c>false</c>.</value>
+            <remarks>
+            If there is an error on this event and no event subscriber sets this to true, an exception will be thrown by the event publisher.
+            </remarks>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleAttribute">
+            <summary>
+            Indicates that the class should be considered a named module using the
+            provided module name.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleAttribute.ModuleName">
+            <summary>
+            Gets or sets the name of the module.
+            </summary>
+            <value>The name of the module.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleAttribute.StartupLoaded">
+            <summary>
+            Gets or sets a value indicating whether the module should be loaded at startup. 
+            </summary>
+            When <see langword="true"/> (default value), it indicates that this module should be loaded at startup. 
+            Otherwise you should explicitly load this module on demand.
+            <value>A <see cref="T:System.Boolean"/> value.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleAttribute.OnDemand">
+            <summary>
+            Gets or sets the value indicating whether the module should be loaded OnDemand.
+            </summary>
+            When <see langword="false"/> (default value), it indicates the module should be loaded as soon as it's dependencies are satisfied.
+            Otherwise you should explicitily load this module via the ModuleManager.
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog">
+            <summary>
+            The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> holds information about the modules that can be used by the 
+            application. Each module is described in a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> class, that records the 
+            name, type and location of the module. 
+            
+            It also verifies that the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> is internally valid. That means that
+            it does not have:
+            <list>
+                <item>Circular dependencies</item>
+                <item>Missing dependencies</item>
+                <item>
+                    Invalid dependencies, such as a Module that's loaded at startup that depends on a module 
+                    that might need to be retrieved.
+                </item>
+            </list>
+            The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> also serves as a baseclass for more specialized Catalogs .
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> class.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.#ctor(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> class while providing an 
+            initial list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s.
+            </summary>
+            <param name="modules">The initial list of modules.</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Items">
+            <summary>
+            Gets the items in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>. This property is mainly used to add <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>s or 
+            <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s through XAML. 
+            </summary>
+            <value>The items in the catalog.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Modules">
+            <summary>
+            Gets all the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> classes that are in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>, regardless 
+            if they are within a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> or not. 
+            </summary>
+            <value>The modules.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Groups">
+            <summary>
+            Gets the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>s that have been added to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>. 
+            </summary>
+            <value>The groups.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Validated">
+            <summary>
+            Gets or sets a value that remembers whether the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> has been validated already. 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.GrouplessModules">
+            <summary>
+            Returns the list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s that are not contained within any <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>. 
+            </summary>
+            <value>The groupless modules.</value>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Load">
+            <summary>
+            Loads the catalog if necessary.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.GetDependentModules(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Return the list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s that <paramref name="moduleInfo"/> depends on.
+            </summary>
+            <remarks>
+            If  the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> was not yet validated, this method will call <see cref="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Validate"/>.
+            </remarks>
+            <param name="moduleInfo">The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to get the </param>
+            <returns>An enumeration of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> that <paramref name="moduleInfo"/> depends on.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.CompleteListWithDependencies(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})">
+            <summary>
+            Returns a list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s that contain both the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s in 
+            <paramref name="modules"/>, but also all the modules they depend on. 
+            </summary>
+            <param name="modules">The modules to get the dependencies for.</param>
+            <returns>
+            A list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> that contains both all <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s in <paramref name="modules"/>
+            but also all the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> they depend on.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Validate">
+            <summary>
+            Validates the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>.
+            </summary>
+            <exception cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException">When validation of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> fails.</exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddModule(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Adds a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/>.
+            </summary>
+            <param name="moduleInfo">The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to add.</param>
+            <returns>The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> for easily adding multiple modules.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddModule(System.Type,System.String[])">
+            <summary>
+            Adds a groupless <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the catalog.
+            </summary>
+            <param name="moduleType"><see cref="T:System.Type"/> of the module to be added.</param>
+            <param name="dependsOn">Collection of module names (<see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleName"/>) of the modules on which the module to be added logically depends on.</param>
+            <returns>The same <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> instance with the added module.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddModule(System.Type,VirtoCommerce.Platform.Core.Modularity.InitializationMode,System.String[])">
+            <summary>
+            Adds a groupless <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the catalog.
+            </summary>
+            <param name="moduleType"><see cref="T:System.Type"/> of the module to be added.</param>
+            <param name="initializationMode">Stage on which the module to be added will be initialized.</param>
+            <param name="dependsOn">Collection of module names (<see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleName"/>) of the modules on which the module to be added logically depends on.</param>
+            <returns>The same <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> instance with the added module.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddModule(System.String,System.String,System.String[])">
+            <summary>
+            Adds a groupless <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the catalog.
+            </summary>
+            <param name="moduleName">Name of the module to be added.</param>
+            <param name="moduleType"><see cref="T:System.Type"/> of the module to be added.</param>
+            <param name="dependsOn">Collection of module names (<see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleName"/>) of the modules on which the module to be added logically depends on.</param>
+            <returns>The same <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> instance with the added module.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddModule(System.String,System.String,VirtoCommerce.Platform.Core.Modularity.InitializationMode,System.String[])">
+            <summary>
+            Adds a groupless <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the catalog.
+            </summary>
+            <param name="moduleName">Name of the module to be added.</param>
+            <param name="moduleType"><see cref="T:System.Type"/> of the module to be added.</param>
+            <param name="initializationMode">Stage on which the module to be added will be initialized.</param>
+            <param name="dependsOn">Collection of module names (<see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleName"/>) of the modules on which the module to be added logically depends on.</param>
+            <returns>The same <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> instance with the added module.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddModule(System.String,System.String,System.String,VirtoCommerce.Platform.Core.Modularity.InitializationMode,System.String[])">
+            <summary>
+            Adds a groupless <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the catalog.
+            </summary>
+            <param name="moduleName">Name of the module to be added.</param>
+            <param name="moduleType"><see cref="T:System.Type"/> of the module to be added.</param>
+            <param name="refValue">Reference to the location of the module to be added assembly.</param>
+            <param name="initializationMode">Stage on which the module to be added will be initialized.</param>
+            <param name="dependsOn">Collection of module names (<see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleName"/>) of the modules on which the module to be added logically depends on.</param>
+            <returns>The same <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> instance with the added module.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Initialize">
+            <summary>
+            Initializes the catalog, which may load and validate the modules.
+            </summary>
+            <exception cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException">When validation of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> fails, because this method calls <see cref="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Validate"/>.</exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.AddGroup(VirtoCommerce.Platform.Core.Modularity.InitializationMode,System.String,VirtoCommerce.Platform.Core.Modularity.ModuleInfo[])">
+            <summary>
+            Creates and adds a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> to the catalog.
+            </summary>
+            <param name="initializationMode">Stage on which the module group to be added will be initialized.</param>
+            <param name="refValue">Reference to the location of the module group to be added.</param>
+            <param name="moduleInfos">Collection of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> included in the group.</param>
+            <returns><see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> with the added module group.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.SolveDependencies(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})">
+            <summary>
+            Checks for cyclic dependencies, by calling the dependencysolver. 
+            </summary>
+            <param name="modules">the.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.ValidateDependencies(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})">
+            <summary>
+            Ensures that all the dependencies within <paramref name="modules"/> refer to <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s
+            within that list.
+            </summary>
+            <param name="modules">The modules to validate modules for.</param>
+            <exception cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.ModularityException">
+            Throws if a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> in <paramref name="modules"/> depends on a module that's 
+            not in <paramref name="modules"/>.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">Throws if <paramref name="modules"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.InnerLoad">
+            <summary>
+            Does the actual work of loading the catalog.  The base implementation does nothing.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.Sort(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})">
+            <summary>
+            Sorts a list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s. This method is called by <see cref="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.CompleteListWithDependencies(System.Collections.Generic.IEnumerable{VirtoCommerce.Platform.Core.Modularity.ModuleInfo})"/>
+            to return a sorted list. 
+            </summary>
+            <param name="modules">The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s to sort.</param>
+            <returns>Sorted list of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.ValidateUniqueModules">
+            <summary>
+            Makes sure all modules have an Unique name. 
+            </summary>
+            <exception cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.DuplicateModuleException">
+            Thrown if the names of one or more modules are not unique. 
+            </exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.ValidateDependencyGraph">
+            <summary>
+            Ensures that there are no cyclic dependencies. 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.ValidateCrossGroupDependencies">
+            <summary>
+            Ensures that there are no dependencies between modules on different groups.
+            </summary>
+            <remarks>
+            A groupless module can only depend on other groupless modules.
+            A module within a group can depend on other modules within the same group and/or on groupless modules.
+            </remarks>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.ValidateDependenciesInitializationMode">
+            <summary>
+            Ensures that there are no modules marked to be loaded <see cref="F:VirtoCommerce.Platform.Core.Modularity.InitializationMode.WhenAvailable"/>
+            depending on modules loaded <see cref="F:VirtoCommerce.Platform.Core.Modularity.InitializationMode.OnDemand"/>
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.GetDependentModulesInner(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Returns the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> on which the received module dependents on.
+            </summary>
+            <param name="moduleInfo">Module whose dependant modules are requested.</param>
+            <returns>Collection of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> dependants of <paramref name="moduleInfo"/>.</returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog.EnsureCatalogValidated">
+            <summary>
+            Ensures that the catalog is validated.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleDependencyAttribute">
+            <summary>
+            Specifies that the current module has a dependency on another module. This attribute should be used on classes that implement <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModule"/>.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleDependencyAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleDependencyAttribute"/>.
+            </summary>
+            <param name="moduleName">The name of the module that this module is dependant upon.</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleDependencyAttribute.ModuleName">
+            <summary>
+            Gets the name of the module that this module is dependant upon.
+            </summary>
+            <value>The name of the module that this module is dependant upon.</value>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleDependencySolver">
+            <summary>
+            Used by ModuleInitializer to get the load sequence
+            for the modules to load according to their dependencies.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleDependencySolver.AddModule(System.String)">
+            <summary>
+            Adds a module to the solver.
+            </summary>
+            <param name="name">The name that uniquely identifies the module.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleDependencySolver.AddDependency(System.String,System.String)">
+            <summary>
+            Adds a module dependency between the modules specified by dependingModule and
+            dependentModule.
+            </summary>
+            <param name="dependingModule">The name of the module with the dependency.</param>
+            <param name="dependentModule">The name of the module dependingModule
+            depends on.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleDependencySolver.Solve">
+            <summary>
+            Calculates an ordered vector according to the defined dependencies.
+            Non-dependant modules appears at the beginning of the resulting array.
+            </summary>
+            <returns>The resulting ordered list of modules.</returns>
+            <exception cref="T:VirtoCommerce.Platform.Core.Modularity.Exceptions.CyclicDependencyFoundException">This exception is thrown
+            when a cycle is found in the defined depedency graph.</exception>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleDependencySolver.ModuleCount">
+            <summary>
+            Gets the number of modules added to the solver.
+            </summary>
+            <value>The number of modules.</value>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleDownloadProgressChangedEventArgs">
+            <summary>
+            Provides progress information as a module downloads.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleDownloadProgressChangedEventArgs.#ctor(VirtoCommerce.Platform.Core.Modularity.ModuleInfo,System.Int64,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleDownloadProgressChangedEventArgs"/> class.
+            </summary>
+            <param name="moduleInfo">The module info.</param>
+            <param name="bytesReceived">The bytes received.</param>
+            <param name="totalBytesToReceive">The total bytes to receive.</param>        
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleDownloadProgressChangedEventArgs.ModuleInfo">
+            <summary>
+            Getsthe module info.
+            </summary>
+            <value>The module info.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleDownloadProgressChangedEventArgs.BytesReceived">
+            <summary>
+            Gets the bytes received.
+            </summary>
+            <value>The bytes received.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleDownloadProgressChangedEventArgs.TotalBytesToReceive">
+            <summary>
+            Gets the total bytes to receive.
+            </summary>
+            <value>The total bytes to receive.</value>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo">
+            <summary>
+            Defines the metadata that describes a module.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.#ctor">
+            <summary>
+            Initializes a new empty instance of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.#ctor(System.String,System.String,System.String[])">
+            <summary>
+            Initializes a new instance of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>.
+            </summary>
+            <param name="name">The module's name.</param>
+            <param name="type">The module <see cref="T:System.Type"/>'s AssemblyQualifiedName.</param>
+            <param name="dependsOn">The modules this instance depends on.</param>
+            <exception cref="T:System.ArgumentNullException">An <see cref="T:System.ArgumentNullException"/> is thrown if <paramref name="dependsOn"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>.
+            </summary>
+            <param name="name">The module's name.</param>
+            <param name="type">The module's type.</param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleName">
+            <summary>
+            Gets or sets the name of the module.
+            </summary>
+            <value>The name of the module.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.ModuleType">
+            <summary>
+            Gets or sets the module <see cref="T:System.Type"/>'s AssemblyQualifiedName.
+            </summary>
+            <value>The type of the module.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.DependsOn">
+            <summary>
+            Gets or sets the list of modules that this module depends upon.
+            </summary>
+            <value>The list of modules that this module depends upon.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.InitializationMode">
+            <summary>
+            Specifies on which stage the Module will be initialized.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref">
+            <summary>
+            Reference to the location of the module assembly.
+            <example>The following are examples of valid <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref"/> values:
+            file://c:/MyProject/Modules/MyModule.dll for a loose DLL in WPF.
+            </example>
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.State">
+            <summary>
+            Gets or sets the state of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> with regards to the module loading and initialization process.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup">
+            <summary>
+            Represents a group of <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> instances that are usually deployed together. <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>s 
+            are also used by the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleCatalog"/> to prevent common deployment problems such as having a module that's required 
+            at startup that depends on modules that will only be downloaded on demand. 
+            
+            The group also forwards <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Ref"/> and <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.InitializationMode"/> values to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s that it
+            contains. 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.InitializationMode">
+            <summary>
+            Gets or sets the <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.InitializationMode"/> for the whole group. Any <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> classes that are
+            added after setting this value will also get this <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.InitializationMode"/>.
+            </summary>
+            <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.InitializationMode"/>
+            <value>The initialization mode.</value>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Ref">
+            <summary>
+            Gets or sets the <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref"/> value for the whole group. Any <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> classes that are
+            added after setting this value will also get this <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Ref"/>.
+            
+            The ref value will also be used by the <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleManager"/> to determine which  <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader"/> to use. 
+            For example, using an "file://" prefix with a valid URL will cause the FileModuleTypeLoader to be used
+            (Only available in the desktop version of CAL).
+            </summary>
+            <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfo.Ref"/>
+            <value>The ref value that will be used.</value>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Add(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Adds an <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> moduleInfo to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+            <param name="item">The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.</param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.ForwardValues(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Forwards <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.InitializationMode"/> and <see cref="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Ref"/> properties from this <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>
+            to <paramref name="moduleInfo"/>.
+            </summary>
+            <param name="moduleInfo">The module info to forward values to.</param>
+            <exception cref="T:System.ArgumentNullException">An <see cref="T:System.ArgumentNullException"/> is thrown if <paramref name="moduleInfo"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Clear">
+            <summary>
+            Removes all <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s from the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Contains(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Determines whether the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> contains a specific value.
+            </summary>
+            <param name="item">The object to locate in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.</param>
+            <returns>
+            true if <paramref name="item"/> is found in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.CopyTo(VirtoCommerce.Platform.Core.Modularity.ModuleInfo[],System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+            <param name="arrayIndex">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="array"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="arrayIndex"/> is less than 0.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            	<paramref name="array"/> is multidimensional.
+            -or-
+            <paramref name="arrayIndex"/> is equal to or greater than the length of <paramref name="array"/>.
+            -or-
+            The number of elements in the source <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> is greater than the available space from <paramref name="arrayIndex"/> to the end of the destination <paramref name="array"/>.
+            </exception>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Count">
+            <summary>
+            Gets the number of elements contained in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+            <value></value>
+            <returns>
+            The number of elements contained in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </returns>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.IsReadOnly">
+            <summary>
+            Gets a value indicating whether the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> is read-only.
+            </summary>
+            <value></value>
+            <returns>false, because the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> is not Read-Only.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Remove(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+            <param name="item">The object to remove from the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.</param>
+            <returns>
+            true if <paramref name="item"/> was successfully removed from the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>; otherwise, false. This method also returns false if <paramref name="item"/> is not found in the original <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerator`1"/> that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.System#Collections#IList#Add(System.Object)">
+            <summary>
+            Adds an item to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+            <param name="value">
+            The <see cref="T:System.Object"/> to add to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            Must be of type <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>
+            </param>
+            <returns>
+            The position into which the new element was inserted.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.System#Collections#IList#Contains(System.Object)">
+            <summary>
+            Determines whether the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> contains a specific value.
+            </summary>
+            <param name="value">
+            The <see cref="T:System.Object"/> to locate in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            Must be of type <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>
+            </param>
+            <returns>
+            true if the <see cref="T:System.Object"/> is found in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.IndexOf(System.Object)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+            <param name="value">
+            The <see cref="T:System.Object"/> to locate in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            Must be of type <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>
+            </param>
+            <returns>
+            The index of <paramref name="value"/> if found in the list; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Insert(System.Int32,System.Object)">
+            <summary>
+            Inserts an item to the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="value"/> should be inserted.</param>
+            <param name="value">
+            The <see cref="T:System.Object"/> to insert into the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            Must be of type <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="index"/> is not a valid index in the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> is not of type <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>
+            </exception>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.IsFixedSize">
+            <summary>
+            Gets a value indicating whether the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> has a fixed size.
+            </summary>
+            <returns>false, because the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/> does not have a fixed length.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.System#Collections#IList#Remove(System.Object)">
+            <summary>
+            Removes the first occurrence of a specific object from the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>.
+            </summary>
+            <param name="value">
+            The <see cref="T:System.Object"/> to remove from the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup"/>. 
+            Must be of type <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>
+            </param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.RemoveAt(System.Int32)">
+            <summary>
+            Removes the <see cref="T:System.Collections.Generic.IList`1"/> item at the specified index.
+            </summary>
+            <param name="index">The zero-based index of the item to remove.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.
+            </exception>
+            <exception cref="T:System.NotSupportedException">
+            The <see cref="T:System.Collections.Generic.IList`1"/> is read-only.
+            </exception>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.System#Collections#IList#Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+            <summary>
+            Copies the elements of the <see cref="T:System.Collections.ICollection"/> to an <see cref="T:System.Array"/>, starting at a particular <see cref="T:System.Array"/> index.
+            </summary>
+            <param name="array">The one-dimensional <see cref="T:System.Array"/> that is the destination of the elements copied from <see cref="T:System.Collections.ICollection"/>. The <see cref="T:System.Array"/> must have zero-based indexing.</param>
+            <param name="index">The zero-based index in <paramref name="array"/> at which copying begins.</param>
+            <exception cref="T:System.ArgumentNullException">
+            	<paramref name="array"/> is null.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="index"/> is less than zero.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            	<paramref name="array"/> is multidimensional.
+            -or-
+            <paramref name="index"/> is equal to or greater than the length of <paramref name="array"/>.
+            -or-
+            The number of elements in the source <see cref="T:System.Collections.ICollection"/> is greater than the available space from <paramref name="index"/> to the end of the destination <paramref name="array"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The type of the source <see cref="T:System.Collections.ICollection"/> cannot be cast automatically to the type of the destination <paramref name="array"/>.
+            </exception>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.IsSynchronized">
+            <summary>
+            Gets a value indicating whether access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe).
+            </summary>
+            <value></value>
+            <returns>true if access to the <see cref="T:System.Collections.ICollection"/> is synchronized (thread safe); otherwise, false.
+            </returns>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.SyncRoot">
+            <summary>
+            Gets an object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+            </summary>
+            <value></value>
+            <returns>
+            An object that can be used to synchronize access to the <see cref="T:System.Collections.ICollection"/>.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.IndexOf(VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Determines the index of a specific item in the <see cref="T:System.Collections.Generic.IList`1"/>.
+            </summary>
+            <param name="item">The object to locate in the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
+            <returns>
+            The index of <paramref name="item"/> if found in the list; otherwise, -1.
+            </returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Insert(System.Int32,VirtoCommerce.Platform.Core.Modularity.ModuleInfo)">
+            <summary>
+            Inserts an item to the <see cref="T:System.Collections.Generic.IList`1"/> at the specified index.
+            </summary>
+            <param name="index">The zero-based index at which <paramref name="item"/> should be inserted.</param>
+            <param name="item">The object to insert into the <see cref="T:System.Collections.Generic.IList`1"/>.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            	<paramref name="index"/> is not a valid index in the <see cref="T:System.Collections.Generic.IList`1"/>.
+            </exception>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Modularity.ModuleInfoGroup.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> at the specified index.
+            </summary>
+            <value>The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> at the specified index </value>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Modularity.ModuleState">
+            <summary>
+            Defines the states a <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> can be in, with regards to the module loading and initialization process. 
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.ModuleState.NotStarted">
+            <summary>
+            Initial state for <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/>s. The <see cref="T:VirtoCommerce.Platform.Core.Modularity.ModuleInfo"/> is defined, 
+            but it has not been loaded, retrieved or initialized yet. 
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.ModuleState.LoadingTypes">
+            <summary>
+            The assembly that contains the type of the module is currently being loaded by an instance of a
+            <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleTypeLoader"/>. 
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.ModuleState.ReadyForInitialization">
+            <summary>
+            The assembly that holds the Module is present. This means the type of the <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModule"/> can be instantiated and initialized. 
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.ModuleState.Initializing">
+            <summary>
+            The module is currently Initializing, by the <see cref="T:VirtoCommerce.Platform.Core.Modularity.IModuleInitializer"/>
+            </summary>
+        </member>
+        <member name="F:VirtoCommerce.Platform.Core.Modularity.ModuleState.Initialized">
+            <summary>
+            The module is initialized and ready to be used. 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.IsActive">
+            <summary>
+            Must be made sending
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.IsSuccessSend">
+            <summary>
+            Notification was successfully sent
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.Subject">
+            <summary>
+            Subject of notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.Body">
+            <summary>
+            Body of notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.Sender">
+            <summary>
+            Sender info (e-mail, phone number and etc.) of notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.Recipient">
+            <summary>
+            Recipient info (e-mail, phone number and etc.) of notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.AttemptCount">
+            <summary>
+            Number of current attempt
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.MaxAttemptCount">
+            <summary>
+            Maximum number of attempts to send a message
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.LastFailAttemptMessage">
+            <summary>
+            Last fail attempt error message
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.LastFailAttemptDate">
+            <summary>
+            Date of last fail attempt
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.StartSendingDate">
+            <summary>
+            Date of start sending notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.Notification.SentDate">
+            <summary>
+            Date of success sent result
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.NotificationTemplate.ObjectId">
+            <summary>
+            Id of object that create notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.NotificationTemplate.NotificationTypeId">
+            <summary>
+            Id of notification type
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.NotificationTemplate.Subject">
+            <summary>
+            Subject of notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.NotificationTemplate.TemplateEngine">
+            <summary>
+            Engine that resolve this template
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.NotificationTemplate.Body">
+            <summary>
+            Body of notification
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Notifications.SearchNotificationCriteria.RepeatHoursIntervalForFail">
+            <summary>
+            time interval used to evaluate  active notifications have failure delivery
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.AdapterInvalidTypeException">
+            <summary>
+              Looks up a localized string similar to The object must be of type &apos;{0}&apos; in order to use the current region adapter..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.AssembliesPathCannotBeNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The AssembliesPath cannot contain a null value or be empty.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.CannotChangeRegionNameException">
+            <summary>
+              Looks up a localized string similar to Cannot change the region name once is set. The current region name is &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.CannotCreateNavigationTarget">
+            <summary>
+              Looks up a localized string similar to Cannot create navigation target &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.CanOnlyAddTypesThatInheritIFromRegionBehavior">
+            <summary>
+              Looks up a localized string similar to Type &apos;{0}&apos; does not implement from IRegionBehavior..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ConfigurationStoreCannotBeNull">
+            <summary>
+              Looks up a localized string similar to The ConfigurationStore cannot contain a null value..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ConfiguringDefaultRegionBehaviors">
+            <summary>
+              Looks up a localized string similar to Configuring default region behaviors..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ConfiguringRegionAdapters">
+            <summary>
+              Looks up a localized string similar to Configuring region adapters..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ContentControlHasContentException">
+            <summary>
+              Looks up a localized string similar to ContentControl&apos;s Content property is not empty..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ContentPathCannotBeNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The ContentPath cannot contain a null value or be empty.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.CreatingShell">
+            <summary>
+              Looks up a localized string similar to Creating the shell..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.CyclicDependencyFound">
+            <summary>
+              Looks up a localized string similar to At least one cyclic dependency has been found in the module catalog. Cycles in the module dependencies must be avoided..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DeactiveNotPossibleException">
+            <summary>
+              Looks up a localized string similar to Deactivation is not possible in this type of region..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DefaultTextLoggerPattern">
+            <summary>
+              Looks up a localized string similar to {1}: {2}. Priority: {3}. Timestamp:{0:u}..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DelegateCommandDelegatesCannotBeNull">
+            <summary>
+              Looks up a localized string similar to Neither the executeMethod nor the canExecuteMethod delegates can be null..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DelegateCommandInvalidGenericPayloadType">
+            <summary>
+              Looks up a localized string similar to T for DelegateCommand&lt;T&gt; is not an object nor Nullable..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DependencyForUnknownModule">
+            <summary>
+              Looks up a localized string similar to Cannot add dependency for unknown module {0}.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DependencyOnMissingModule">
+            <summary>
+              Looks up a localized string similar to A module declared a dependency on another module which is not declared to be loaded. Missing module(s): {0}.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DirectoryNotFound">
+            <summary>
+              Looks up a localized string similar to Directory {0} was not found..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DuplicatedModule">
+            <summary>
+              Looks up a localized string similar to A duplicated module with name {0} has been found by the loader..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.DuplicatedModuleGroup">
+            <summary>
+              Looks up a localized string similar to A duplicated module group with name {0} has been found by the loader..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.FailedToLoadModule">
+            <summary>
+              Looks up a localized string similar to An exception occurred while initializing module &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.FailedToLoadModuleNoAssemblyInfo">
+            <summary>
+              Looks up a localized string similar to An exception occurred while initializing module &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.FailedToRetrieveModule">
+            <summary>
+              Looks up a localized string similar to Failed to load type for module {0}..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.HostControlCannotBeNull">
+            <summary>
+              Looks up a localized string similar to HostControl cannot have null value when behavior attaches..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.HostControlCannotBeSetAfterAttach">
+            <summary>
+              Looks up a localized string similar to The HostControl property cannot be set after Attach method has been called..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.HostControlMustBeATabControl">
+            <summary>
+              Looks up a localized string similar to HostControl type must be a TabControl..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.IEnumeratorObsolete">
+            <summary>
+              Looks up a localized string similar to The IModuleEnumerator interface is no longer used and has been replaced by ModuleCatalog..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.InitializingShell">
+            <summary>
+              Looks up a localized string similar to Initializing the shell..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.InvalidArgumentAssemblyUri">
+            <summary>
+              Looks up a localized string similar to The argument must be a valid absolute Uri to an assembly file..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.InvalidDelegateRerefenceTypeException">
+            <summary>
+              Looks up a localized string similar to The Target of the IDelegateReference should be of type {0}..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ItemsControlHasItemsSourceException">
+            <summary>
+              Looks up a localized string similar to ItemsControl&apos;s ItemsSource property is not empty..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.LoggerCreatedSuccessfully">
+            <summary>
+              Looks up a localized string similar to Logger was created successfully..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.MappingExistsException">
+            <summary>
+              Looks up a localized string similar to Mapping with the given type is already registered: {0}..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ModuleDependenciesNotMetInGroup">
+            <summary>
+              Looks up a localized string similar to Module {0} depends on other modules that don&apos;t belong to the same group..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ModulePathCannotBeNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The ModulePath cannot contain a null value or be empty.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ModuleTypeNotFound">
+            <summary>
+              Looks up a localized string similar to Failed to load type &apos;{0}&apos; from assembly &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.NavigationInProgress">
+            <summary>
+              Looks up a localized string similar to Navigation is already in progress on region with name &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.NavigationServiceHasNoRegion">
+            <summary>
+              Looks up a localized string similar to Navigation cannot proceed until a region is set for the RegionNavigationService..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.NoRegionAdapterException">
+            <summary>
+              Looks up a localized string similar to The IRegionAdapter for the type {0} is not registered in the region adapter mappings. You can register an IRegionAdapter for this control by overriding the ConfigureRegionAdapterMappings method in the bootstrapper..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.NotOverwrittenGetModuleEnumeratorException">
+            <summary>
+              Looks up a localized string similar to The method &apos;GetModuleEnumerator&apos; of the bootstrapper must be overwritten in order to use the default module initialization logic..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.OnViewRegisteredException">
+            <summary>
+              Looks up a localized string similar to An exception has occurred while trying to add a view to region &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.PropertySupport_ExpressionNotProperty_Exception">
+            <summary>
+              Looks up a localized string similar to The member access expression does not access a property..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.PropertySupport_NotMemberAccessExpression_Exception">
+            <summary>
+              Looks up a localized string similar to The expression is not a member access expression..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.PropertySupport_StaticExpression_Exception">
+            <summary>
+              Looks up a localized string similar to The referenced property is a static property..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionBehaviorAttachCannotBeCallWithNullRegion">
+            <summary>
+              Looks up a localized string similar to The Attach method cannot be called when Region property is null..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionBehaviorRegionCannotBeSetAfterAttach">
+            <summary>
+              Looks up a localized string similar to The Region property cannot be set after Attach method has been called..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionCreationException">
+            <summary>
+              Looks up a localized string similar to An exception occurred while creating a region with name &apos;{0}&apos;. The exception was: {1}..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionManagerWithDifferentNameException">
+            <summary>
+              Looks up a localized string similar to The region being added already has a name of &apos;{0}&apos; and cannot be added to the region manager with a different name (&apos;{1}&apos;)..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionNameCannotBeEmptyException">
+            <summary>
+              Looks up a localized string similar to The region name cannot be null or empty..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionNameExistsException">
+            <summary>
+              Looks up a localized string similar to Region with the given name is already registered: {0}.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionNotFound">
+            <summary>
+              Looks up a localized string similar to This RegionManager does not contain a Region with the name &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionNotInRegionManagerException">
+            <summary>
+              Looks up a localized string similar to The region manager does not contain the {0} region..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionViewExistsException">
+            <summary>
+              Looks up a localized string similar to View already exists in region..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.RegionViewNameExistsException">
+            <summary>
+              Looks up a localized string similar to View with name &apos;{0}&apos; already exists in the region..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.SettingTheRegionManager">
+            <summary>
+              Looks up a localized string similar to Setting the RegionManager..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.StartupModuleDependsOnAnOnDemandModule">
+            <summary>
+              Looks up a localized string similar to Module {0} is marked for automatic initialization when the application starts, but it depends on modules that are marked as OnDemand initialization. To fix this error, mark the dependency modules for InitializationMode=WhenAvailable, or remove this validation by extending the ModuleCatalog class..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String">
+            <summary>
+              Looks up a localized string similar to This control is being associated with a region, but the control is already bound to something else..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String10">
+            <summary>
+              Looks up a localized string similar to root cause of the problem..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String11">
+            <summary>
+              Looks up a localized string similar to Error was: {1}..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String12">
+            <summary>
+              Looks up a localized string similar to This control is being associated with a region, but the control is already bound to something else..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String13">
+            <summary>
+              Looks up a localized string similar to If you did not explicitly set the control&apos;s ItemSource property,.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String14">
+            <summary>
+              Looks up a localized string similar to this exception may be caused by a change in the value of the inherited RegionManager attached property..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String15">
+            <summary>
+              Looks up a localized string similar to - The most likely causing exception was was: &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String16">
+            <summary>
+              Looks up a localized string similar to But also check the InnerExceptions for more detail or call .GetRootException()..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String17">
+            <summary>
+              Looks up a localized string similar to - The most likely causing exception was: &apos;{0}&apos;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String18">
+            <summary>
+              Looks up a localized string similar to But also check the InnerExceptions for more detail or call .GetRootException()..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String2">
+            <summary>
+              Looks up a localized string similar to If you did not explicitly set the control&apos;s Content property,.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String3">
+            <summary>
+              Looks up a localized string similar to this exception may be caused by a change in the value of the inherited RegionManager attached property..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String4">
+            <summary>
+              Looks up a localized string similar to - The exception message was: {2}.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String5">
+            <summary>
+              Looks up a localized string similar to - The Assembly that the module was trying to be loaded from was:{1}.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String6">
+            <summary>
+              Looks up a localized string similar to Check the InnerException property of the exception for more information. If the exception occurred while creating an object in a DI container, you can exception.GetRootException() to help locate the root cause of the problem..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String7">
+            <summary>
+              Looks up a localized string similar to - The exception message was: {1}.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String8">
+            <summary>
+              Looks up a localized string similar to Check the InnerException property of the exception for more information. If the exception occurred.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.String9">
+            <summary>
+              Looks up a localized string similar to while creating an object in a DI container, you can exception.GetRootException() to help locate the.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.StringCannotBeNullOrEmpty">
+            <summary>
+              Looks up a localized string similar to The provided String argument {0} must not be null or empty..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.StringCannotBeNullOrEmpty1">
+            <summary>
+              Looks up a localized string similar to The provided String argument {0} must not be null or empty..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.TypeWithKeyNotRegistered">
+            <summary>
+              Looks up a localized string similar to No BehaviorType with key &apos;{0}&apos; was registered..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.UpdateRegionException">
+            <summary>
+              Looks up a localized string similar to An exception occurred while trying to create region objects..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.UpdatingRegions">
+            <summary>
+              Looks up a localized string similar to Updating Regions..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ValueMustBeOfTypeModuleInfo">
+            <summary>
+              Looks up a localized string similar to The value must be of type ModuleInfo..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ValueNotFound">
+            <summary>
+              Looks up a localized string similar to {0} not found..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Properties.Resources.ViewNotInRegionException">
+            <summary>
+              Looks up a localized string similar to The region does not contain the specified view..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.ApplicationUserExtended.StoreId">
+            <summary>
+            Tenant id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.ApplicationUserExtended.Logins">
+            <summary>
+            External provider logins.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.ApplicationUserExtended.Roles">
+            <summary>
+            Assigned roles.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.ApplicationUserExtended.Permissions">
+            <summary>
+            All permissions from assigned roles.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.ApplicationUserExtended.ApiAccounts">
+            <summary>
+            API keys
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.IHasSecurityAccounts.SecurityAccounts">
+            <summary>
+            All security accounts 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Security.IPermissionScopeService.GetAvailablePermissionScopes(System.String)">
+            <summary>
+            Return scopes list for concrete permission used in future for permission bound
+            </summary>
+            <param name="permission"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Security.IPermissionScopeService.GetScopeByTypeName(System.String)">
+            <summary>
+            Factory method for scope
+            </summary>
+            <param name="scopeTypeName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Security.IPermissionScopeService.GetObjectPermissionScopeStrings(System.Object)">
+            <summary>
+            Gets concrete entity scope resulting strings representation for using in future permission checks 
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.Permission.ModuleId">
+            <summary>
+            Id of the module which has registered this permission.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.Permission.GroupName">
+            <summary>
+            Display name of the group to which this permission belongs. The '|' character is used to separate Child and parent groups.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Security.Permission.GetPermissionWithScopeCombinationNames">
+            <summary>
+            Generate permissions string with scope combination
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.Platform.Core.Security.PermissionScope">
+            <summary>
+            Base class for all types repesents permision boundary scopes
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.PermissionScope.Type">
+            <summary>
+            Define scope type influences the choice of ui pattern in role definition 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.PermissionScope.Label">
+            <summary>
+            Display representation 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Security.PermissionScope.Scope">
+            <summary>
+            Represent string scope value
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Security.PermissionScope.IsScopeAvailableForPermission(System.String)">
+            <summary>
+            Return all supported scope for given permission used in role permission configuration 
+            </summary>
+            <param name="permission"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Security.PermissionScope.GetEntityScopeStrings(System.Object)">
+            <summary>
+            Return resulting list of scope string for entity may be used for permissions check
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Settings.ISettingsManager.LoadEntitySettingsValues(VirtoCommerce.Platform.Core.Common.Entity)">
+            <summary>
+            Deep load and populate settings values for entity and all nested objects 
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Settings.ISettingsManager.SaveEntitySettingsValues(VirtoCommerce.Platform.Core.Common.Entity)">
+            <summary>
+            Deep save entity and all nested objects settings values
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Settings.ISettingsManager.RemoveEntitySettings(VirtoCommerce.Platform.Core.Common.Entity)">
+            <summary>
+            Deep remove entity and all nested objects settings values
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:VirtoCommerce.Platform.Core.Settings.ISettingsManager.RegisterModuleSettings(System.String,VirtoCommerce.Platform.Core.Settings.SettingEntry[])">
+            <summary>
+            Used to runtime settings registration
+            </summary>
+            <param name="moduleId"></param>
+            <param name="settings"></param>
+        </member>
+        <member name="P:VirtoCommerce.Platform.Core.Settings.SettingEntry.ObjectId">
+            <summary>
+            Setting may belong to any object in system
+            </summary>
+        </member>
+    </members>
+</doc>
