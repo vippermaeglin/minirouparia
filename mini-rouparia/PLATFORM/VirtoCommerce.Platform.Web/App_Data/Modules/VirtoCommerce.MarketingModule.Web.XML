@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.MarketingModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.EvaluateDynamicContent(VirtoCommerce.Domain.Marketing.Model.DynamicContent.DynamicContentEvaluationContext)">
+            <summary>
+            Get dynamic content for given placeholders
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.GetDynamicContentById(System.String)">
+            <summary>
+            Find dynamic content item object by id
+            </summary>
+            <remarks>Return a single dynamic content item object </remarks>
+            <param name="id"> content item id</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.CreateDynamicContent(VirtoCommerce.MarketingModule.Web.Model.DynamicContentItem)">
+            <summary>
+            Add new dynamic content item object to marketing system
+            </summary>
+            <param name="contentItem">dynamic content object that needs to be added to the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.UpdateDynamicContent(VirtoCommerce.MarketingModule.Web.Model.DynamicContentItem)">
+            <summary>
+             Update a existing dynamic content item object
+            </summary>
+            <param name="contentItem">dynamic content object that needs to be updated in the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.DeleteDynamicContents(System.String[])">
+            <summary>
+             Delete a dynamic content item objects
+            </summary>
+            <param name="ids">content item object ids for delete in the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.GetDynamicContentPlaceById(System.String)">
+            <summary>
+            Find dynamic content place object by id
+            </summary>
+            <remarks>Return a single dynamic content place object </remarks>
+            <param name="id">place id</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.CreateDynamicContentPlace(VirtoCommerce.MarketingModule.Web.Model.DynamicContentPlace)">
+            <summary>
+            Add new dynamic content place object to marketing system
+            </summary>
+            <param name="contentPlace">dynamic content place object that needs to be added to the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.UpdateDynamicContentPlace(VirtoCommerce.MarketingModule.Web.Model.DynamicContentPlace)">
+            <summary>
+             Update a existing dynamic content place object
+            </summary>
+            <param name="contentPlace">dynamic content place object that needs to be updated in the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.DeleteDynamicContentPlaces(System.String[])">
+            <summary>
+             Delete a dynamic content place objects
+            </summary>
+            <param name="ids">content place object ids for delete from dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.GetNewDynamicPublication">
+            <summary>
+            Get new dynamic content publication object 
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.GetDynamicContentPublicationById(System.String)">
+            <summary>
+            Find dynamic content publication object by id
+            </summary>
+            <remarks>Return a single dynamic content publication object </remarks>
+            <param name="id">publication id</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.CreateDynamicContentPublication(VirtoCommerce.MarketingModule.Web.Model.DynamicContentPublication)">
+            <summary>
+            Add new dynamic content publication object to marketing system
+            </summary>
+            <param name="publication">dynamic content publication object that needs to be added to the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.UpdateDynamicContentPublication(VirtoCommerce.MarketingModule.Web.Model.DynamicContentPublication)">
+            <summary>
+             Update a existing dynamic content publication object
+            </summary>
+            <param name="publication">dynamic content publication object that needs to be updated in the dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.DeleteDynamicContentPublications(System.String[])">
+            <summary>
+             Delete a dynamic content publication objects
+            </summary>
+            <param name="ids">content publication object ids for delete from dynamic content system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.GetDynamicContentFolderById(System.String)">
+            <summary>
+            Find dynamic content folder by id
+            </summary>
+            <remarks>Return a single dynamic content folder</remarks>
+            <param name="id">folder id</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.CreateDynamicContentFolder(VirtoCommerce.MarketingModule.Web.Model.DynamicContentFolder)">
+            <summary>
+            Add new dynamic content folder
+            </summary>
+            <param name="folder">dynamic content folder that needs to be added</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.UpdateDynamicContentFolder(VirtoCommerce.MarketingModule.Web.Model.DynamicContentFolder)">
+            <summary>
+             Update a existing dynamic content folder
+            </summary>
+            <param name="folder">dynamic content folder that needs to be updated</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleDynamicContentController.DeleteDynamicContentFolders(System.String[])">
+            <summary>
+             Delete a dynamic content folders
+            </summary>
+            <param name="ids">folders ids for delete</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModuleController.Search(VirtoCommerce.Domain.Marketing.Model.MarketingSearchCriteria)">
+            <summary>
+            Search marketing objects by given criteria
+            </summary>
+            <remarks>Allow to find all marketing module objects (Promotions, Dynamic content objects)</remarks>
+            <param name="criteria">criteria</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModulePromotionController.EvaluatePromotions(VirtoCommerce.Domain.Marketing.Model.PromotionEvaluationContext)">
+            <summary>
+            Evaluate promotions
+            </summary>
+            <param name="context">Promotion evaluation context</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModulePromotionController.GetPromotionById(System.String)">
+            <summary>
+            Find promotion object by id
+            </summary>
+            <remarks>Return a single promotion (dynamic or custom) object </remarks>
+            <param name="id">promotion id</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModulePromotionController.GetNewDynamicPromotion">
+            <summary>
+            Get new dynamic promotion object 
+            </summary>
+            <remarks>Return a new dynamic promotion object with populated dynamic expression tree</remarks>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModulePromotionController.CreatePromotion(VirtoCommerce.MarketingModule.Web.Model.Promotion)">
+            <summary>
+            Add new dynamic promotion object to marketing system
+            </summary>
+            <param name="promotion">dynamic promotion object that needs to be added to the marketing system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModulePromotionController.UpdatePromotions(VirtoCommerce.MarketingModule.Web.Model.Promotion)">
+            <summary>
+            Update a existing dynamic promotion object in marketing system
+            </summary>
+            <param name="promotion">>dynamic promotion object that needs to be updated in the marketing system</param>
+        </member>
+        <member name="M:VirtoCommerce.MarketingModule.Web.Controllers.Api.MarketingModulePromotionController.DeletePromotions(System.String[])">
+            <summary>
+             Delete promotions objects
+            </summary>
+            <param name="ids">promotions object ids for delete in the marketing system</param>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.IsValid">
+            <summary>
+            Gets or sets the flag of promotion reward is valid. Also used as a flag for applicability (applied or potential)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.Description">
+            <summary>
+            Gets or sets the value of promotion reward description
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.CouponAmount">
+            <summary>
+            Gets or sets the value of coupon amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.Coupon">
+            <summary>
+            Gets or sets the value of coupon code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.CouponMinOrderAmount">
+            <summary>
+            Gets or sets the value of minimum order total cost for applying coupon
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.PromotionId">
+            <summary>
+            Gets or sets the value of promotion id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.Promotion">
+            <summary>
+            Gets or sets the promotion
+            </summary>
+            <value>
+            Promotion object
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.RewardType">
+            <summary>
+            Gets or sets the value of promotion reward type
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.AmountType">
+            <summary>
+            Gets or sets the value of promotion reward amount type
+            </summary>
+            <value>
+            "Absolute" or "Relative"
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.Amount">
+            <summary>
+            Gets or sets the value of promotion reward amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.Quantity">
+            <summary>
+            Gets or sets the value of line item quantity for applying promotion reward
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.LineItemId">
+            <summary>
+            Gets or sets the value of line item id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.ProductId">
+            <summary>
+            Gets or sets the value of product id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.CategoryId">
+            <summary>
+            Gets or sets the value of category id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.MeasureUnit">
+            <summary>
+            Gets or sets the value of measurement unit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.ImageUrl">
+            <summary>
+            Gets or sets the value of promotion reward logo absolute URL
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.PromotionReward.ShippingMethod">
+            <summary>
+            Gets or sets the value of reward shipping method code
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.MarketingModule.Web.Model.DynamicContentFolder">
+            <summary>
+            Represent folder contains dynamic content system entries, used for hierarchy storing and easy management 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentFolder.Outline">
+            <summary>
+            Folder all parent ids concatenated (1;21;344)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentFolder.Path">
+            <summary>
+            Represent folder path with folder names in hierarchy (Root\Child\Child2)
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.MarketingModule.Web.Model.DynamicContentItem">
+            <summary>
+            Represent content entry for presentation (Images, Html, Banner etc) 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentItem.Outline">
+            <summary>
+            all parent folders ids concatenated (1;21;344)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentItem.Path">
+            <summary>
+            all parent folders names concatenated (Root\Child\Child2)
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPlace">
+            <summary>
+            Represent presentation placeholders for dynamic content publication
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPlace.Outline">
+            <summary>
+            all parent folders ids concatenated (1;21;344)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPlace.Path">
+            <summary>
+            all parent folders names concatenated (Root\Child\Child2)
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPublication">
+            <summary>
+            Represent dynamic content publication and link content and places together
+            may contain conditional expressions applicability 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPublication.Priority">
+            <summary>
+            Priority used for chose publication in combination
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPublication.StoreId">
+            <summary>
+            Store where the publication is active 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.DynamicContentPublication.DynamicExpression">
+            <summary>
+            Dynamic conditions tree determine the applicability of this publication
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.MarketingModule.Web.Model.Promotion">
+            <summary>
+            Represent marketing promotion, define applicable rules and rewards amount in marketing system
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.Type">
+            <summary>
+            It contains the name of realizing this type promotion.
+            DynamicPromotion is build in implementation allow to construct promotion with dynamic conditions and rewards.
+            For complex custom scenarios user may define personal 'hard-coded' promotion types
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.Store">
+            <summary>
+            Store id that is covered by this promotion
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.Catalog">
+            <summary>
+            Catalog id that is covered by this promotion
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.MaxUsageCount">
+            <summary>
+            Maximum promotion usage count
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.Coupons">
+            <summary>
+            List of coupons codes which may be used for activate that promotion
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.Priority">
+            <summary>
+            Used for choosing in combination 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.MarketingModule.Web.Model.Promotion.DynamicExpression">
+            <summary>
+            Dynamic conditions tree determine the applicability of this promotion and reward definition
+            </summary>
+        </member>
+    </members>
+</doc>

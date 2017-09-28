@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.CustomerModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.ListOrganizations">
+            <summary>
+            Get organizations
+            </summary>
+            <remarks>Get array of all organizations.</remarks>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.Search(VirtoCommerce.Domain.Customer.Model.MembersSearchCriteria)">
+            <summary>
+            Get members
+            </summary>
+            <remarks>Get array of members satisfied search criteria.</remarks>
+            <param name="criteria">concrete instance of SearchCriteria type type will be created by using PolymorphicMemberSearchCriteriaJsonConverter</param>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.GetMemberById(System.String)">
+            <summary>
+            Get member
+            </summary>
+            <param name="id">member id</param>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.CreateMember(VirtoCommerce.Domain.Customer.Model.Member)">
+            <summary>
+            Create new member (can be any object inherited from Member type)
+            </summary>
+            <param name="member">concrete instance of abstract member type will be created by using PolymorphicMemberJsonConverter</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.UpdateMember(VirtoCommerce.Domain.Customer.Model.Member)">
+            <summary>
+            Update member
+            </summary>
+            <param name="member">concrete instance of abstract member type will be created by using PolymorphicMemberJsonConverter</param>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.DeleteMembers(System.String[])">
+            <summary>
+            Delete members
+            </summary>
+            <remarks>Delete members by given array of ids.</remarks>
+            <param name="ids">An array of members ids</param>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.CreateContact(VirtoCommerce.Domain.Customer.Model.Contact)">
+            <summary>
+            Create contact
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.UpdateContact(VirtoCommerce.Domain.Customer.Model.Contact)">
+            <summary>
+            Update contact
+            </summary>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.CreateOrganization(VirtoCommerce.Domain.Customer.Model.Organization)">
+            <summary>
+            Create organization
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.UpdateOrganization(VirtoCommerce.Domain.Customer.Model.Organization)">
+            <summary>
+            Update organization
+            </summary>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.DeleteOrganizations(System.String[])">
+            <summary>
+            Delete organizations
+            </summary>
+            <remarks>Delete organizations by given array of ids.</remarks>
+            <param name="ids">An array of organizations ids</param>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.DeleteContacts(System.String[])">
+            <summary>
+            Delete contacts
+            </summary>
+            <remarks>Delete contacts by given array of ids.</remarks>
+            <param name="ids">An array of contacts ids</param>
+            <response code="204">Operation completed.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.GetOrganizationById(System.String)">
+            <summary>
+            Get organization
+            </summary>
+            <param name="id">Organization id</param>
+            <response code="200"></response>
+            <response code="404">Organization not found.</response>
+        </member>
+        <member name="M:VirtoCommerce.CustomerModule.Web.Controllers.Api.CustomerModuleController.GetContactById(System.String)">
+            <summary>
+            Get contact
+            </summary>
+            <param name="id">Contact ID</param>
+        </member>
+        <member name="T:VirtoCommerce.CustomerModule.Web.JsonConverters.PolymorphicMemberJsonConverter">
+            <summary>
+            Used to deserialize from JSON derived Member types
+            </summary>
+        </member>
+    </members>
+</doc>

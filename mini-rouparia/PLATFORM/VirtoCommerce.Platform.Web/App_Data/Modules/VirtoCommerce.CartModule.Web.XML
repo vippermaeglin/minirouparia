@@ -1,0 +1,910 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.CartModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.GetCurrentCart(System.String,System.String)">
+            <summary>
+            Get shopping cart by store id and customer id
+            </summary>
+            <remarks>
+            Returns shopping cart or null if it is not found
+            </remarks>
+            <param name="storeId">Store id</param>
+            <param name="customerId">Customer id</param>
+            <response code="200"></response>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.GetCartById(System.String)">
+            <summary>
+            Get shopping cart by id
+            </summary>
+            <param name="id">Shopping cart id</param>
+            <response code="200"></response>
+            <response code="404">Shopping cart not found</response>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.Search(VirtoCommerce.CartModule.Web.Model.SearchCriteria)">
+            <summary>
+            Search for shopping carts by criteria
+            </summary>
+            <param name="criteria">Search criteria</param>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.Create(VirtoCommerce.CartModule.Web.Model.ShoppingCart)">
+            <summary>
+            Create shopping cart
+            </summary>
+            <param name="cart">Shopping cart model</param>
+            <response code="204">Operation completed</response>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.Update(VirtoCommerce.CartModule.Web.Model.ShoppingCart)">
+            <summary>
+            Update shopping cart
+            </summary>
+            <param name="cart">Shopping cart model</param>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.GetShipmentMethods(System.String)">
+            <summary>
+            Get shipping methods for shopping cart
+            </summary>
+            <param name="cartId">Shopping cart id</param>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.GetPaymentMethods(System.String)">
+            <summary>
+            Get payment methods for shopping cart
+            </summary>
+            <param name="cartId">Shopping cart id</param>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.GetPaymentMethodsForStore(System.String)">
+            <summary>
+            Get payment methods for store
+            </summary>
+            <param name="storeId">Store id</param>
+        </member>
+        <member name="M:VirtoCommerce.CartModule.Web.Controllers.Api.CartModuleController.DeleteCarts(System.String[])">
+            <summary>
+            Delete shopping carts by ids
+            </summary>
+            <param name="ids">Array of shopping cart ids</param>
+            <response code="204">Operation completed</response>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Type">
+            <summary>
+            Gets or sets the value of address type
+            </summary>
+            <value>
+            Billind, Shipping
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Organization">
+            <summary>
+            Gets or sets the value of organization name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.CountryCode">
+            <summary>
+            Gets or sets the value of country code
+            </summary>
+            <value>
+            Country code in ISO 3166-1 alpha-3 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.CountryName">
+            <summary>
+            Gets or sets the value of country name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.City">
+            <summary>
+            Gets or sets the value of city name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.PostalCode">
+            <summary>
+            Gets or sets the value of postal code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Zip">
+            <summary>
+            Gets or sets the value of zip code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Line1">
+            <summary>
+            Gets or sets the value of address line 1
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Line2">
+            <summary>
+            Gets or sets the value of address line 2
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.RegionId">
+            <summary>
+            Gets or sets the value of region code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.RegionName">
+            <summary>
+            Gets or sets the value of region name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.FirstName">
+            <summary>
+            Gets or sets the value of first name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.MiddleName">
+            <summary>
+            Gets or sets the value of middle name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.LastName">
+            <summary>
+            Gets or sets the value of last name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Phone">
+            <summary>
+            Gets or sets the value of phone number
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Address.Email">
+            <summary>
+            Gets or sets the value of E-mail address
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.CardSummary.Currency">
+            <summary>
+            Gets or sets the value of currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.CardSummary.Total">
+            <summary>
+            Gets or sets the value of shopping cart total cost
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.CardSummary.ItemCount">
+            <summary>
+            Gets or sets the value of shopping cart total line items count
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.CardSummary.TotalQuantity">
+            <summary>
+            Gets or sets the value of shopping cart total quantity (line items count * quantity)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ProductId">
+            <summary>
+            Gets or sets the value of product id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.CatalogId">
+            <summary>
+            Gets or sets the value of catalog id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.CategoryId">
+            <summary>
+            Gets or sets the value of category id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Sku">
+            <summary>
+            Gets or sets the value of product SKU
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ProductType">
+            <summary>
+            Gets or sets the value of product type (Digital, physical etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Name">
+            <summary>
+            Gets or sets the value of line item name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Quantity">
+            <summary>
+            Gets or sets the value of line item quantity
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Currency">
+            <summary>
+            Gets or sets the value of line item currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.WarehouseLocation">
+            <summary>
+            Gets or sets the value of line item warehouse location
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ShipmentMethodCode">
+            <summary>
+            Gets or sets the value of line item shipping method code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.RequiredShipping">
+            <summary>
+            Gets or sets the requirement for line item shipping
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ThumbnailImageUrl">
+            <summary>
+            Gets or sets the value of line item thumbnail image absolute URL
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ImageUrl">
+            <summary>
+            Gets or sets the value of line item image absolute URL
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.IsGift">
+            <summary>
+            Gets or sets the flag of line item is a gift
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Discounts">
+            <summary>
+            Gets or sets the collection of line item discounts
+            </summary>
+            <value>
+            Collection od Discount objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.LanguageCode">
+            <summary>
+            Gets or sets the value of language code
+            </summary>
+            <value>
+            Culture name in ISO 3166-1 alpha-3 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Comment">
+            <summary>
+            Gets or sets the value of line item comment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.IsReccuring">
+            <summary>
+            Gets or sets the flag of line item is recurring
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.TaxIncluded">
+            <summary>
+            Gets or sets flag of line item has tax
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.VolumetricWeight">
+            <summary>
+            Gets or sets the value of line item volumetric weight
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.WeightUnit">
+            <summary>
+            Gets or sets the value of line item weight unit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Weight">
+            <summary>
+            Gets or sets the value of line item weight
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.MeasureUnit">
+            <summary>
+            Gets or sets the value of line item measurement unit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Height">
+            <summary>
+            Gets or sets the value of line item height
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Length">
+            <summary>
+            Gets or sets the value of line item length
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.Width">
+            <summary>
+            Gets or sets the value of line item width
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ValidationType">
+            <summary>
+            Represent any line item validation type (noPriceValidate, noQuantityValidate etc) this value can be used in storefront 
+            to select appropriate validation strategy
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.PriceId">
+            <summary>
+            Price id which that was used in the formation of this line item
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ListPrice">
+            <summary>
+            Gets or sets the value of line item original price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.SalePrice">
+            <summary>
+            Gets or sets the value of line item sale price (include static discount)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.PlacedPrice">
+            <summary>
+            Gets or sets the value of line item actual price (include all types of discounts)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ExtendedPrice">
+            <summary>
+            Gets or sets the value of line item subtotal price (actual price * line item quantity)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.DiscountTotal">
+            <summary>
+            Gets or sets the value of line item total discount amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.TaxTotal">
+            <summary>
+            Gets or sets the value of line item total tax amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.TaxType">
+            <summary>
+            Gets or sets the value of line item tax type
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.TaxDetails">
+            <summary>
+            Gets or sets the collection of line item tax detalization lines
+            </summary>
+            <value>
+            Collection of TaxDetail objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.ObjectType">
+            <summary>
+            Used for dynamic properties management, contains object type string
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.LineItem.DynamicProperties">
+            <summary>
+            Dynamic properties collections
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Discount.PromotionId">
+            <summary>
+            Gets or sets the value of promotion id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Discount.Currency">
+            <summary>
+            Gets or sets the value of currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Discount.DiscountAmount">
+            <summary>
+            Gets or sets the value of discount amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Discount.Description">
+            <summary>
+            Gets or sets the value of discount description
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Payment.OuterId">
+            <summary>
+            Gets or sets the value of payment outer id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Payment.PaymentGatewayCode">
+            <summary>
+            Gets or sets the value of payment gateway code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Payment.Currency">
+            <summary>
+            Gets or sets the value of payment currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Payment.Amount">
+            <summary>
+            Gets or sets the value of payment amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Payment.BillingAddress">
+            <summary>
+            Gets or sets the billing address
+            </summary>
+            <value>
+            Address object
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.GatewayCode">
+            <summary>
+            Gets or sets the value of payment gateway code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.Name">
+            <summary>
+            Gets or sets the value of payment method name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.IconUrl">
+            <summary>
+            Gets or sets the value of payment method logo absolute URL
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.Description">
+            <summary>
+            Gets or sets the value of payment method description
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.Type">
+            <summary>
+            Gets or sets the value of payment method type
+            </summary>
+            <value>
+            "Unknown", "Standard", "Redirection", "PreparedForm"
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.Group">
+            <summary>
+            Gets or sets the value of payment method group type
+            </summary>
+            <value>
+            "Paypal", "BankCard", "Alternative", "Manual"
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.Priority">
+            <summary>
+            Gets or sets the value of payment method priority
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.PaymentMethod.IsAvailableForPartial">
+            <summary>
+            Is payment method available for partial payments
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchCriteria.Keyword">
+            <summary>
+            Gets or sets the value of search criteria keyword
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchCriteria.CustomerId">
+            <summary>
+            Gets or sets the value of search criteria customer id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchCriteria.StoreId">
+            <summary>
+            Gets or sets the value of search criteria store id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchCriteria.Start">
+            <summary>
+            Gets or sets the value of search criteria skip records count
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchCriteria.Count">
+            <summary>
+            Gets or sets the value of search criteria page size
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchResult.TotalCount">
+            <summary>
+            Gets or sets the value of search result total shopping cart count
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.SearchResult.ShopingCarts">
+            <summary>
+            Gets or sets the collection of search result shopping carts
+            </summary>
+            <value>
+            List of ShoppingCart object
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.ShipmentMethodCode">
+            <summary>
+            Gets or sets the value of shipping method code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.ShipmentMethodOption">
+            <summary>
+            Gets or sets the value of shipping method option
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.FulfilmentCenterId">
+            <summary>
+            Gets or sets the value of fulfillment center id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.DeliveryAddress">
+            <summary>
+            Gets or sets the delivery address
+            </summary>
+            <value>
+            Address object
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Currency">
+            <summary>
+            Gets or sets the value of shipping currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.VolumetricWeight">
+            <summary>
+            Gets or sets the value of volumetric weight
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.WeightUnit">
+            <summary>
+            Gets or sets the value of weight unit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Weight">
+            <summary>
+            Gets or sets the value of weight
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.MeasureUnit">
+            <summary>
+            Gets or sets the value of measurement units
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Height">
+            <summary>
+            Gets or sets the value of height
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Length">
+            <summary>
+            Gets or sets the value of length
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Width">
+            <summary>
+            Gets or sets the value of width
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.TaxIncluded">
+            <summary>
+            Gets or sets the flag of shipping has tax
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.ShippingPrice">
+            <summary>
+            Gets or sets the value of shipping price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Total">
+            <summary>
+            Gets or sets the value of total shipping price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.DiscountTotal">
+            <summary>
+            Gets or sets the value of total shipping discount amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.TaxTotal">
+            <summary>
+            Gets or sets the value of total shipping tax amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.ItemSubtotal">
+            <summary>
+            Gets or sets the value of shipping items subtotal
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Subtotal">
+            <summary>
+            Gets or sets the value of shipping subtotal
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Discounts">
+            <summary>
+            Gets or sets the collection of shipping discounts
+            </summary>
+            <value>
+            Collection of Discount objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.Items">
+            <summary>
+            Gets or sets the collection of shipping items
+            </summary>
+            <value>
+            Collection of shipment items objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.TaxType">
+            <summary>
+            Gets or sets the value of shipping tax type
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.Shipment.TaxDetails">
+            <summary>
+            Gets or sets the collection of line item tax detalization lines
+            </summary>
+            <value>
+            Collection of TaxDetail objects
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CartModule.Web.Model.ShipmentItem">
+            <summary>
+            Represent information about quantity and line item belongs to shipment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.ShipmentMethodCode">
+            <summary>
+            Gets or sets the value of shipping method code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.Name">
+            <summary>
+            Gets or sets the value of shipping method name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.OptionName">
+            <summary>
+            Gets or sets the value of shipping method option name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.OptionDescription">
+            <summary>
+            Gets or sets the value of shipping method option description
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.LogoUrl">
+            <summary>
+            Gets or sets the value of shipping method logo absolute URL
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.TaxType">
+            <summary>
+            Gets or sets the value of shipping method tax type
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.Currency">
+            <summary>
+            Gets or sets the value of shipping method currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.Price">
+            <summary>
+            Gets or sets the value of shipping method price
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShippingMethod.Discounts">
+            <summary>
+            Gets or sets the collection of shipping method discounts
+            </summary>
+            <value>
+            Collection of Discount objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Name">
+            <summary>
+            Gets or sets the value of shopping cart name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.StoreId">
+            <summary>
+            Gets or sets the value of store id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.ChannelId">
+            <summary>
+            Gets or sets the value of channel id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.IsAnonymous">
+            <summary>
+            Gets or sets the flag of shopping cart is anonymous
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.CustomerId">
+            <summary>
+            Gets or sets the value of shopping cart customer id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.CustomerName">
+            <summary>
+            Gets or sets the value of shopping cart customer name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.OrganizationId">
+            <summary>
+            Gets or sets the value of shopping cart organization id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Currency">
+            <summary>
+            Gets or sets the value of shopping cart currency
+            </summary>
+            <value>
+            Currency code in ISO 4217 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Coupon">
+            <summary>
+            Gets or sets the shopping cart coupon
+            </summary>
+            <value>
+            Coupon object
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.LanguageCode">
+            <summary>
+            Gets or sets the value of shopping cart language code
+            </summary>
+            <value>
+            Culture name in ISO 3166-1 alpha-3 format
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.TaxIncluded">
+            <summary>
+            Gets or sets the flag of shopping cart has tax
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.IsRecuring">
+            <summary>
+            Gets or sets the flag of shopping cart is recurring
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Comment">
+            <summary>
+            Gets or sets the value of shopping cart text comment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.VolumetricWeight">
+            <summary>
+            Gets or sets the value of volumetric weight
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.WeightUnit">
+            <summary>
+            Gets or sets the value of weight unit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Weight">
+            <summary>
+            Gets or sets the value of shopping cart weight
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.MeasureUnit">
+            <summary>
+            Gets or sets the value of measurement unit
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Height">
+            <summary>
+            Gets or sets the value of height
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Length">
+            <summary>
+            Gets or sets the value of length
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Width">
+            <summary>
+            Gets or sets the value of width
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.ValidationType">
+            <summary>
+            Represent any line item validation type (noPriceValidate, noQuantityValidate etc) this value can be used in storefront 
+            to select appropriate validation strategy
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Total">
+            <summary>
+            Gets or sets the value of shopping cart total cost
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.SubTotal">
+            <summary>
+            Gets or sets the value of shopping cart subtotal
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.ShippingTotal">
+            <summary>
+            Gets or sets the value of shipping total cost
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.HandlingTotal">
+            <summary>
+            Gets or sets the value of handling total cost
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.DiscountTotal">
+            <summary>
+            Gets or sets the value of total discount amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.TaxTotal">
+            <summary>
+            Gets or sets the value of total tax cost
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Addresses">
+            <summary>
+            Gets or sets the collection of shopping cart addresses
+            </summary>
+            <value>
+            Collection of Address objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Items">
+            <summary>
+            Gets or sets the value of shopping cart line items
+            </summary>
+            <value>
+            Collection of LineItem objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Payments">
+            <summary>
+            Gets or sets the collection of shopping cart payments
+            </summary>
+            <value>
+            Collection of Payment objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Shipments">
+            <summary>
+            Gets or sets the collection of shopping cart shipments
+            </summary>
+            <value>
+            Collection of Shipment objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.Discounts">
+            <summary>
+            Gets or sets the collection of shopping cart discounts
+            </summary>
+            <value>
+            Collection of Discount objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.TaxDetails">
+            <summary>
+            Gets or sets the collection of line item tax detalization lines
+            </summary>
+            <value>
+            Collection of TaxDetail objects
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.ObjectType">
+            <summary>
+            Used for dynamic properties management, contains object type string
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CartModule.Web.Model.ShoppingCart.DynamicProperties">
+            <summary>
+            Dynamic properties collections
+            </summary>
+        </member>
+    </members>
+</doc>

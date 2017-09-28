@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.InventoryModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.InventoryModule.Web.Controllers.Api.InventoryModuleController.GetProductsInventories(System.String[])">
+            <summary>
+            Get inventories of products
+            </summary>
+            <remarks>Get inventory of products for each fulfillment center.</remarks>
+            <param name="ids">Products ids</param>
+        </member>
+        <member name="M:VirtoCommerce.InventoryModule.Web.Controllers.Api.InventoryModuleController.GetProductInventories(System.String)">
+            <summary>
+            Get inventories of product
+            </summary>
+            <remarks>Get inventories of product for each fulfillment center.</remarks>
+            <param name="productId">Product id</param>
+        </member>
+        <member name="M:VirtoCommerce.InventoryModule.Web.Controllers.Api.InventoryModuleController.UpsertProductInventory(VirtoCommerce.InventoryModule.Web.Model.InventoryInfo)">
+            <summary>
+            Upsert inventory
+            </summary>
+            <remarks>Upsert (add or update) given inventory of product.</remarks>
+            <param name="inventory">Inventory to upsert</param>
+        </member>
+        <member name="P:VirtoCommerce.InventoryModule.Web.Model.FulfillmentCenter.CountryCode">
+            <summary>
+            ISO 3166-1 alpha-3
+            </summary>
+        </member>
+    </members>
+</doc>

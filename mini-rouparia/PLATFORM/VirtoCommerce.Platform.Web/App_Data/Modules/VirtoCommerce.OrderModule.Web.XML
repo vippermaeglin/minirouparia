@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.OrderModule.Web</name>
+    </assembly>
+    <members>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.Search(VirtoCommerce.Domain.Order.Model.SearchCriteria)">
+            <summary>
+            Search customer orders by given criteria
+            </summary>
+            <param name="criteria">criteria</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.GetByNumber(System.String)">
+            <summary>
+            Find customer order by number
+            </summary>
+            <remarks>Return a single customer order with all nested documents or null if order was not found</remarks>
+            <param name="number">customer order number</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.GetById(System.String)">
+            <summary>
+            Find customer order by id
+            </summary>
+            <remarks>Return a single customer order with all nested documents or null if order was not found</remarks>
+            <param name="id">customer order id</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.CreateOrderFromCart(System.String)">
+            <summary>
+            Create new customer order based on shopping cart.
+            </summary>
+            <param name="id">shopping cart id</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.ProcessOrderPayments(System.String,System.String,VirtoCommerce.Domain.Payment.Model.BankCardInfo)">
+            <summary>
+            Register customer order payment in external payment system
+            </summary>
+            <remarks>Used in storefront checkout or manual order payment registration</remarks>
+            <param name="orderId">customer order id</param>
+            <param name="paymentId">payment id</param>
+            <param name="bankCardInfo">banking card information</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.CreateOrder(VirtoCommerce.OrderModule.Web.Model.CustomerOrder)">
+            <summary>
+            Add new customer order to system
+            </summary>
+            <param name="customerOrder">customer order</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.Update(VirtoCommerce.OrderModule.Web.Model.CustomerOrder)">
+            <summary>
+             Update a existing customer order 
+            </summary>
+            <param name="customerOrder">customer order</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.GetNewShipment(System.String)">
+            <summary>
+            Get new shipment for specified customer order
+            </summary>
+            <remarks>Return new shipment document with populates all required properties.</remarks>
+            <param name="id">customer order id </param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.GetNewPayment(System.String)">
+            <summary>
+            Get new payment for specified customer order
+            </summary>
+            <remarks>Return new payment  document with populates all required properties.</remarks>
+            <param name="id">customer order id </param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.DeleteOrdersByIds(System.String[])">
+            <summary>
+             Delete a whole customer orders
+            </summary>
+            <param name="ids">customer order ids for delete</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.Delete(System.String,System.String)">
+            <summary>
+             Delete a concrete customer order operation (document) 
+            </summary>
+            <param name="id">customer order id</param>
+            <param name="operationId">operation id</param>
+        </member>
+        <member name="M:VirtoCommerce.OrderModule.Web.Controllers.Api.OrderModuleController.GetDashboardStatistics(System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+             Get a some order statistic information for Commerce manager dashboard
+            </summary>
+            <param name="start">start interval date</param>
+            <param name="end">end interval date</param>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.Code">
+            <summary>
+            Gets or sets the value of payment gateway code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.Name">
+            <summary>
+            Gets or sets the value of payment method name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.IconUrl">
+            <summary>
+            Gets or sets the value of payment method logo absolute URL
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.Description">
+            <summary>
+            Gets or sets the value of payment method description
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.PaymentMethodType">
+            <summary>
+            Gets or sets the value of payment method type
+            </summary>
+            <value>
+            "Unknown", "Standard", "Redirection", "PreparedForm"
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.PaymentMethodGroupType">
+            <summary>
+            Gets or sets the value of payment method group type
+            </summary>
+            <value>
+            "Paypal", "BankCard", "Alternative", "Manual"
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.Priority">
+            <summary>
+            Gets or sets the value of payment method priority
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentMethod.IsAvailableForPartial">
+            <summary>
+            Is payment method available for partial payments
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ShippingMethod.Code">
+            <summary>
+            Code used for link shipment with external carrier service implementation (FedEx, USPS etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ShippingMethod.Name">
+            <summary>
+            Method name (system name)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ShippingMethod.Description">
+            <summary>
+            Gets or sets the value of shipping method name
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ShippingMethod.OptionName">
+            <summary>
+            Describe some shipment options (Vip, Air, Moment etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ShippingMethod.OptionDescription">
+            <summary>
+            Gets or sets the value of shipping method option description
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ShippingMethod.LogoUrl">
+            <summary>
+            Gets or sets the value of shipping method logo absolute URL
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.Coupon">
+            <summary>
+            Represent coupon entered by customer on checkout 
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.CustomerOrder">
+            <summary>
+            Represent customer order
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.ChannelId">
+            <summary>
+            Chanel (Web site, mobile application etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.EmployeeName">
+            <summary>
+            Employee who should handle that order
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.Addresses">
+            <summary>
+            All shipping and billing order addresses
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.InPayments">
+            <summary>
+            Incoming payments operations
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.Items">
+            <summary>
+            All customer order line items
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.Shipments">
+            <summary>
+            All customer order shipments
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.Discount">
+            <summary>
+            All customer order discount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.TaxDetails">
+            <summary>
+            Tax details
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.CustomerOrder.Scopes">
+            <summary>
+            Security permission scopes used for security check on UI
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.PaymentIn">
+            <summary>
+            Represent incoming payment operation 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentIn.OrganizationName">
+            <summary>
+            Customer organization
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentIn.Purpose">
+            <summary>
+            Payment purpose text 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentIn.PaymentMethod">
+            <summary>
+            Payment method for current order payment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentIn.IncomingDate">
+            <summary>
+            Expected date of receipt of payment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.PaymentIn.OuterId">
+            <summary>
+            Outer id used for link with payment in external systems
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.PriceId">
+            <summary>
+            Price id which that was used in the formation of this line item
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.BasePrice">
+            <summary>
+            Price with tax and without dicount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.Price">
+            <summary>
+            Price with tax and discount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.DiscountAmount">
+            <summary>
+            discount amount
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.Tax">
+            <summary>
+            Tax sum
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.ReserveQuantity">
+            <summary>
+            Reserve quantity
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.IsCancelled">
+            <summary>
+            Flag represent that line item was canceled
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.CancelReason">
+            <summary>
+            Text representation of cancel reason
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.ObjectType">
+            <summary>
+            Used for dynamic properties management, contains object type string
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.LineItem.DynamicProperties">
+            <summary>
+            Dynamic properties collections
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.ProcessPaymentResult">
+            <summary>
+            Represent process payment request result 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ProcessPaymentResult.RedirectUrl">
+            <summary>
+            Redirect url used for OutSite payment processing
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.ProcessPaymentResult.HtmlForm">
+            <summary>
+            Generated Html form used for InSite payment processing 
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.Shipment">
+            <summary>
+            Represent customer order shipment operation (document)
+            contains information as delivery address, items, dimensions etc.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Shipment.OrganizationName">
+            <summary>
+            Customer organization
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Shipment.FulfillmentCenterName">
+            <summary>
+            Fulfillment center where shipment will be handled
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Shipment.ShippingMethod">
+            <summary>
+            Selected shipping method to deliver current shipment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Shipment.EmployeeName">
+            <summary>
+            Employee who responsible for handling current shipment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Shipment.Items">
+            <summary>
+            Information about quantity and order items belongs to current shipment
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Shipment.Packages">
+            <summary>
+            Information about packages belongs to current shipment
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.Operation">
+            <summary>
+            Represent base class for all order module documents (operations)
+            contains shared set of properties
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.OperationType">
+            <summary>
+            Operation type string representation (CustomerOrder, Shipment etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.Number">
+            <summary>
+            Unique user friendly document number (generate automatically based on special algorithm realization)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.IsApproved">
+            <summary>
+            Flag can be used to refer to a specific order status in a variety of user scenarios with combination of Status
+            (Order completion, Shipment send etc)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.Status">
+            <summary>
+            Current operation status may have any values defined by concrete business process
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.Currency">
+            <summary>
+            Currency code
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.Sum">
+            <summary>
+            Money amount without tax
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.Tax">
+            <summary>
+            Tax total
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.ParentOperationId">
+            <summary>
+            Used for construct hierarchy of operation and represent parent operation id
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.ObjectType">
+            <summary>
+            Used for dynamic properties management, contains object type string
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Model.Operation.DynamicProperties">
+            <summary>
+            Dynamic properties collections
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Model.ShipmentItem">
+            <summary>
+            Represent information about quantity and line item belongs to shipment
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Security.OrderResponsibleScope">
+            <summary>
+            Scope bounded by order responsible
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Security.OrderStoreScope">
+            <summary>
+            Scope bounded by order store
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.CancelOrderNotificationBody">
+            <summary>
+              Looks up a localized string similar to Your order &lt;strong&gt;{{ ordernumber }}&lt;/strong&gt;.&lt;br&gt; Cancelation order reason - &lt;strong&gt;{{ cancelationreason }}&lt;/strong&gt;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.CancelOrderNotificationSubject">
+            <summary>
+              Looks up a localized string similar to Your order was canceled.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.CreateOrderNotificationBody">
+            <summary>
+              Looks up a localized string similar to Your order number  - &lt;strong&gt;{{ ordernumber }}&lt;/strong&gt;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.CreateOrderNotificationSubject">
+            <summary>
+              Looks up a localized string similar to Your order created.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.NewOrderStatusNotificationBody">
+            <summary>
+              Looks up a localized string similar to Your order &lt;strong&gt;{{ ordernumber }}&lt;/strong&gt; change status from &lt;strong&gt;{{ oldstatus }}&lt;strong&gt; to &lt;strong&gt;{{ newstatus }}&lt;strong&gt;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.NewOrderStatusNotificatonSubject">
+            <summary>
+              Looks up a localized string similar to Your order status has been change.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.OrderPaidNotificationBody">
+            <summary>
+              Looks up a localized string similar to Thank you for paying &lt;strong&gt;{{ ordernumber }}&lt;/strong&gt; order.&lt;br&gt; You had paid &lt;strong&gt;{{ fullprice }} {{ currency }}&lt;/strong&gt;.&lt;br&gt; Paid date - &lt;strong&gt;{{ paiddate }}&lt;/strong&gt;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.OrderPaidNotificationSubject">
+            <summary>
+              Looks up a localized string similar to Your order was fully paid.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.OrderSentNotificationBody">
+            <summary>
+              Looks up a localized string similar to Your order &lt;strong&gt;{{ ordernumber }}&lt;/strong&gt; was sent.&lt;br&gt; Number of sent parcels - &lt;strong&gt;{{ numberofshipments }}&lt;/strong&gt;.&lt;br&gt; Parcels tracking numbers:&lt;br&gt; {% for shipmentnumber in shipmentsnumbers %} &lt;br&gt;&lt;strong&gt;{{ shipmentnumber }}&lt;/strong&gt; {% endfor %}&lt;br&gt;&lt;br&gt;Sent date - &lt;strong&gt;{{ sentorderdate }}&lt;/strong&gt;..
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.OrderModule.Web.Resources.OrderNotificationResource.OrderSentNotificationSubject">
+            <summary>
+              Looks up a localized string similar to Your order was sent.
+            </summary>
+        </member>
+    </members>
+</doc>

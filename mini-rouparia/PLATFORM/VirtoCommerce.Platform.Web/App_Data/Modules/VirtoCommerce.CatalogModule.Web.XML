@@ -1,0 +1,1479 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VirtoCommerce.CatalogModule.Web</name>
+    </assembly>
+    <members>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Binders.IdsStringArrayBinder">
+            <summary>
+            Because Swagger generated API client passed arrays as joined string need parse query string by binder
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogBaseController.ApplyRestrictionsForCurrentUser(VirtoCommerce.Domain.Catalog.Model.SearchCriteria)">
+            <summary>
+            Filter catalog search criteria based on current user permissions
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.GetCatalogs">
+            <summary>
+            Get Catalogs list
+            </summary>
+            <remarks>Get common and virtual Catalogs list with minimal information included. Returns array of Catalog</remarks>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.Get(System.String)">
+            <summary>
+            Gets Catalog by id.
+            </summary>
+            <remarks>Gets Catalog by id with full information loaded</remarks>
+            <param name="id">The Catalog id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.GetNewCatalog">
+            <summary>
+            Gets the template for a new catalog.
+            </summary>
+            <remarks>Gets the template for a new common catalog</remarks>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.GetNewVirtualCatalog">
+            <summary>
+            Gets the template for a new virtual catalog.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.Create(VirtoCommerce.CatalogModule.Web.Model.Catalog)">
+            <summary>
+            Creates the specified catalog.
+            </summary>
+            <remarks>Creates the specified catalog</remarks>
+            <param name="catalog">The catalog to create</param>
+            <exception cref="T:System.UnauthorizedAccessException"></exception>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.Update(VirtoCommerce.CatalogModule.Web.Model.Catalog)">
+            <summary>
+            Updates the specified catalog.
+            </summary>
+            <remarks>Updates the specified catalog.</remarks>
+            <param name="catalog">The catalog.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCatalogsController.Delete(System.String)">
+            <summary>
+            Deletes catalog by id.
+            </summary>
+            <remarks>Deletes catalog by id</remarks>
+            <param name="id">Catalog id.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCategoriesController.Get(System.String)">
+            <summary>
+            Gets category by id.
+            </summary>
+            <param name="id">Category id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCategoriesController.GetCategoriesByIds(System.String[],VirtoCommerce.Domain.Catalog.Model.CategoryResponseGroup)">
+             <summary>
+             Gets categories by ids
+             </summary>
+             <param name="ids">Categories ids</param>
+            <param name="respGroup">Response group.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCategoriesController.GetNewCategory(System.String,System.String)">
+            <summary>
+            Gets the template for a new category.
+            </summary>
+            <param name="catalogId">The catalog id.</param>
+            <param name="parentCategoryId">The parent category id. (Optional)</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCategoriesController.CreateOrUpdateCategory(VirtoCommerce.CatalogModule.Web.Model.Category)">
+            <summary>
+            Creates or updates the specified category.
+            </summary>
+            <remarks>If category.id is null, a new category is created. It's updated otherwise</remarks>
+            <param name="category">The category.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleCategoriesController.Delete(System.String[])">
+            <summary>
+            Deletes the specified categories by id.
+            </summary>
+            <param name="ids">The categories ids.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleExportImportController.DoExport(VirtoCommerce.CatalogModule.Web.ExportImport.CsvExportInfo)">
+            <summary>
+            Start catalog data export process.
+            </summary>
+            <remarks>Data export is an async process. An ExportNotification is returned for progress reporting.</remarks>
+            <param name="exportInfo">The export configuration.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleExportImportController.GetMappingConfiguration(System.String,System.String)">
+            <summary>
+            Gets the CSV mapping configuration.
+            </summary>
+            <remarks>Analyses the supplied file's structure and returns automatic column mapping.</remarks>
+            <param name="fileUrl">The file URL.</param>
+            <param name="delimiter">The CSV delimiter.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleExportImportController.DoImport(VirtoCommerce.CatalogModule.Web.ExportImport.CsvImportInfo)">
+            <summary>
+            Start catalog data import process.
+            </summary>
+            <remarks>Data import is an async process. An ImportNotification is returned for progress reporting.</remarks>
+            <param name="importInfo">The import data configuration.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.GetProductById(System.String,VirtoCommerce.Domain.Catalog.Model.ItemResponseGroup)">
+             <summary>
+             Gets product by id.
+             </summary>
+             <param name="id">Item id.</param>
+            <param name="respGroup">Response group.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.GetProductByIds(System.String[],VirtoCommerce.Domain.Catalog.Model.ItemResponseGroup)">
+             <summary>
+             Gets products by ids
+             </summary>
+             <param name="ids">Item ids</param>
+            <param name="respGroup">Response group.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.GetNewProductByCatalog(System.String)">
+            <summary>
+            Gets the template for a new product (outside of category).
+            </summary>
+            <remarks>Use when need to create item belonging to catalog directly.</remarks>
+            <param name="catalogId">The catalog id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.GetNewProductByCatalogAndCategory(System.String,System.String)">
+            <summary>
+            Gets the template for a new product (inside category).
+            </summary>
+            <remarks>Use when need to create item belonging to catalog category.</remarks>
+            <param name="catalogId">The catalog id.</param>
+            <param name="categoryId">The category id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.GetNewVariation(System.String)">
+            <summary>
+            Gets the template for a new variation.
+            </summary>
+            <param name="productId">The parent product id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.Update(VirtoCommerce.CatalogModule.Web.Model.Product)">
+            <summary>
+            Updates the specified product.
+            </summary>
+            <param name="product">The product.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleProductsController.Delete(System.String[])">
+            <summary>
+            Deletes the specified items by id.
+            </summary>
+            <param name="ids">The items ids.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleListEntryController.ListItemsSearch(VirtoCommerce.Domain.Catalog.Model.SearchCriteria)">
+            <summary>
+            Searches for the items by complex criteria.
+            </summary>
+            <param name="searchCriteria">The search criteria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleListEntryController.CreateLinks(VirtoCommerce.CatalogModule.Web.Model.ListEntryLink[])">
+            <summary>
+            Creates links for categories or items to parent categories and catalogs.
+            </summary>
+            <param name="links">The links.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleListEntryController.DeleteLinks(VirtoCommerce.CatalogModule.Web.Model.ListEntryLink[])">
+            <summary>
+            Unlinks the linked categories or items from parent categories and catalogs.
+            </summary>
+            <param name="links">The links.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleListEntryController.Move(VirtoCommerce.CatalogModule.Web.Model.MoveInfo)">
+            <summary>
+            Move categories or products to another location.
+            </summary>
+            <param name="moveInfo">Move operation details</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModuleSearchController.Search(VirtoCommerce.Domain.Catalog.Model.SearchCriteria)">
+            <summary>
+            Searches for the items by complex criteria
+            </summary>
+            <param name="criteria">The search criteria.</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModulePropertiesController.GetPropertyValues(System.String,System.String)">
+            <summary>
+            Gets all dictionary values that specified property can have.
+            </summary>
+            <param name="propertyId">The property id.</param>
+            <param name="keyword">The keyword. (Optional)</param>
+            <returns></returns>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModulePropertiesController.Get(System.String)">
+            <summary>
+            Gets property metainformation by id.
+            </summary>
+            <param name="propertyId">The property id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModulePropertiesController.GetNewCatalogProperty(System.String)">
+            <summary>
+            Gets the template for a new catalog property.
+            </summary>
+            <param name="catalogId">The catalog id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModulePropertiesController.GetNewCategoryProperty(System.String)">
+            <summary>
+            Gets the template for a new category property.
+            </summary>
+            <param name="categoryId">The category id.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModulePropertiesController.CreateOrUpdateProperty(VirtoCommerce.CatalogModule.Web.Model.Property)">
+            <summary>
+            Creates or updates the specified property.
+            </summary>
+            <remarks>If property.IsNew == True, a new property is created. It's updated otherwise</remarks>
+            <param name="property">The property.</param>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Controllers.Api.CatalogModulePropertiesController.Delete(System.String)">
+            <summary>
+            Deletes property by id.
+            </summary>
+            <param name="id">The property id.</param>
+            <returns></returns>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Aggregation.AggregationType">
+            <summary>
+            Gets or sets the value of the aggregation type
+            </summary>
+            <value>
+            "Attribute", "PriceRange", "Range" or "Category"
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Aggregation.Field">
+            <summary>
+            Gets or sets the value of the aggregation field
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Aggregation.Labels">
+            <summary>
+            Gets or sets the collection of aggregation labels
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Aggregation.Items">
+            <summary>
+            Gets or sets the collection of the aggregation items
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AggregationItem.Value">
+            <summary>
+            Gets or sets the aggregation item value
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AggregationItem.Count">
+            <summary>
+            Gets or sets the aggregation item count
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AggregationItem.IsApplied">
+            <summary>
+            Gets or sets the flag for aggregation item is applied
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AggregationItem.Labels">
+            <summary>
+            Gets or sets the collection of aggregation item labels
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.Catalog">
+            <summary>
+            Merchandising Catalog.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Catalog.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Catalog.IsVirtual">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Catalog"/> is virtual or common.
+            </summary>
+            <value>
+              <c>true</c> if virtual; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Catalog.DefaultLanguage">
+            <summary>
+            Gets the language from languages list marked as default.
+            </summary>
+            <value>
+            The default language.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Catalog.Languages">
+            <summary>
+            Gets or sets the catalog languages.
+            </summary>
+            <value>
+            The languages.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Catalog.Properties">
+            <summary>
+            Gets or sets the catalog properties.
+            </summary>
+            <value>
+            The properties.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.CategoryLink">
+            <summary>
+            Information to define linking information from item or category to category.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CategoryLink.SourceItemId">
+            <summary>
+            Gets or sets the source item id.
+            </summary>
+            <value>
+            The source item identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CategoryLink.SourceCategoryId">
+            <summary>
+            Gets or sets the source category identifier.
+            </summary>
+            <value>
+            The source category identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CategoryLink.CatalogId">
+            <summary>
+            Gets or sets the target catalog identifier.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CategoryLink.CategoryId">
+            <summary>
+            Gets or sets the target category identifier.
+            </summary>
+            <value>
+            The category identifier.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.EditorialReview">
+            <summary>
+            Editorial review for an item.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.EditorialReview.Content">
+            <summary>
+            Gets or sets the review content.
+            </summary>
+            <value>
+            The content.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.EditorialReview.ReviewType">
+            <summary>
+            Gets or sets the type of the review.
+            </summary>
+            <value>
+            The type of the review.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.EditorialReview.LanguageCode">
+            <summary>
+            Gets or sets the review language.
+            </summary>
+            <value>
+            The language code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.EditorialReview.IsInherited">
+            <summary>
+            System flag used to mark that object was inherited from other
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.ExportNotification">
+            <summary>
+             Notification for catalog data export job.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.ExportNotification.DownloadUrl">
+            <summary>
+            Gets or sets the URL for downloading exported data.
+            </summary>
+            <value>
+            The download URL.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.ImportNotification">
+            <summary>
+             Notification for catalog data import job.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.JobNotificationBase">
+            <summary>
+            Base class for sending jobs status notifications.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.JobNotificationBase.Finished">
+            <summary>
+            Gets or sets the job finish date and time.
+            </summary>
+            <value>
+            The finished.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.JobNotificationBase.TotalCount">
+            <summary>
+            Gets or sets the total count of objects to process.
+            </summary>
+            <value>
+            The total count.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.JobNotificationBase.ProcessedCount">
+            <summary>
+            Gets or sets the count of processed objects.
+            </summary>
+            <value>
+            The processed count.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.JobNotificationBase.ErrorCount">
+            <summary>
+            Gets or sets the count of errors during processing.
+            </summary>
+            <value>
+            The error count.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PushNotifications.JobNotificationBase.Errors">
+            <summary>
+            Gets or sets the errors that has occurred during processing.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ListEntryLink">
+            <summary>
+            Information to define linking information from item or category to category.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntryLink.ListEntryId">
+            <summary>
+            Gets or sets the list entry identifier.
+            </summary>
+            <value>
+            The list entry identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntryLink.ListEntryType">
+            <summary>
+            Gets or sets the type of the list entry. E.g. "product", "category"
+            </summary>
+            <value>
+            The type of the list entry.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntryLink.CatalogId">
+            <summary>
+            Gets or sets the target catalog identifier.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntryLink.CategoryId">
+            <summary>
+            Gets or sets the target category identifier.
+            </summary>
+            <value>
+            The category identifier.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.MoveInfo">
+            <summary>
+            Represent move operation detail
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation">
+            <summary>
+            Class containing associated product information like 'Accessory', 'Related Item', etc.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation.Name">
+            <summary>
+            Gets or sets the ProductAssociation name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation.Priority">
+            <summary>
+            Gets or sets the order in which the associated product is displayed.
+            </summary>
+            <value>
+            The priority.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation.ProductId">
+            <summary>
+            Gets or sets the identifier of the associated product.
+            </summary>
+            <value>
+            The product identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation.ProductName">
+            <summary>
+            Gets or sets the name of the associated product.
+            </summary>
+            <value>
+            The name of the product.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation.ProductCode">
+            <summary>
+            Gets or sets the associated product code.
+            </summary>
+            <value>
+            The product code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ProductAssociation.ProductImg">
+            <summary>
+            Gets or sets the associated product image.
+            </summary>
+            <value>
+            The product img.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.PropertyDictionaryValue">
+            <summary>
+            Individual dictionary value record for dictionary supporting property.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyDictionaryValue.PropertyId">
+            <summary>
+            Gets or sets the property id that this dictionary value belongs to.
+            </summary>
+            <value>
+            The property identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyDictionaryValue.Alias">
+            <summary>
+            Gets or sets the value of this dictionary value in default language.
+            </summary>
+            <value>
+            The alias.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyDictionaryValue.LanguageCode">
+            <summary>
+            Gets or sets the language code.
+            </summary>
+            <value>
+            The language code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyDictionaryValue.Value">
+            <summary>
+            Gets or sets the value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.CatalogLanguage">
+            <summary>
+            Catalog Language information.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CatalogLanguage.CatalogId">
+            <summary>
+            Gets or sets the catalog identifier.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CatalogLanguage.IsDefault">
+            <summary>
+            Gets or sets a value indicating whether this catalog language is default.
+            </summary>
+            <value>
+            <c>true</c> if this instance is default; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CatalogLanguage.LanguageCode">
+            <summary>
+            Gets or sets the language code.
+            </summary>
+            <value>
+            The language code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.CatalogLanguage.DisplayName">
+            <summary>
+            Gets the human-readable language name.
+            </summary>
+            <value>
+            The display name.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ListEntryCategory">
+            <summary>
+            Category ListEntry record.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ListEntry">
+            <summary>
+            Base class for all entries used in catalog categories browsing.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.Type">
+            <summary>
+            Gets or sets the type. E.g. "product", "category"
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this entry is active.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.ImageUrl">
+            <summary>
+            Gets or sets the image URL.
+            </summary>
+            <value>
+            The image URL.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.Code">
+            <summary>
+            Gets or sets the entry code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.Links">
+            <summary>
+            Gets or sets the links.
+            </summary>
+            <value>
+            The links.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.Outline">
+            <summary>
+            All entry parents ids
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntry.Path">
+            <summary>
+            All entry parents names
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.Category">
+            <summary>
+            Merchandising Category
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.ParentId">
+            <summary>
+            Gets or sets the parent category id.
+            </summary>
+            <value>
+            The parent identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.IsVirtual">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Category"/> is virtual or common.
+            </summary>
+            <value>
+              <c>true</c> if virtual; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Code">
+            <summary>
+            Gets or sets the code.
+            </summary>
+            <value>
+            The code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.TaxType">
+            <summary>
+            Gets or sets the type of the tax.
+            </summary>
+            <value>
+            The type of the tax.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Catalog">
+            <summary>
+            Gets or sets the catalog that this category belongs to.
+            </summary>
+            <value>
+            The catalog.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.CatalogId">
+            <summary>
+            Gets or sets the catalog id that this category belongs to.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Category"/> is active.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Parents">
+            <summary>
+            All parents categories
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Children">
+            <summary>
+            Gets or sets the children categories.
+            </summary>
+            <value>
+            The children.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Properties">
+            <summary>
+            Gets or sets the properties.
+            </summary>
+            <value>
+            The properties.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Links">
+            <summary>
+            Gets or sets the links.
+            </summary>
+            <value>
+            The links.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.Images">
+            <summary>
+            Gets or sets the images.
+            </summary>
+            <value>
+            The images.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Category.SeoInfos">
+            <summary>
+            Gets or sets the list of SEO information records.
+            </summary>
+            <value>
+            The seo infos.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.Product">
+            <summary>
+            Merchandising item.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.ManufacturerPartNumber">
+            <summary>
+            Gets or sets the manufacturer part number for this product.
+            </summary>
+            <value>
+            The manufacturer part number.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Gtin">
+            <summary>
+            Gets or sets the Global Trade Item Number.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.CatalogId">
+            <summary>
+            Gets or sets the catalog id that this product belongs to.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Catalog">
+            <summary>
+            Gets or sets the catalog that this product belongs to.
+            </summary>
+            <value>
+            The catalog.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.CategoryId">
+            <summary>
+            Gets or sets the category id that this product belongs to.
+            </summary>
+            <value>
+            The category identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Category">
+            <summary>
+            Gets or sets the category that this product belongs to.
+            </summary>
+            <value>
+            The category.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Outline">
+            <summary>
+            Gets or sets the all parent categories ids concatenated. E.g. (1;21;344)
+            </summary>
+            <value>
+            The outline.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Parents">
+            <summary>
+            All parents categories
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.IndexingDate">
+            <summary>
+            Gets or sets the date and time that this product was last indexed at.
+            </summary>
+            <value>
+            The indexing date.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.TitularItemId">
+            <summary>
+            Gets or sets the titular item id for a variation.
+            </summary>
+            <value>
+            The titular item identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.IsBuyable">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Product"/> is buyable.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.IsActive">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Product"/> is active.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.TrackInventory">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Product"/> inventory is tracked.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.MaxQuantity">
+            <summary>
+            Gets or sets the maximum quantity of the product that a customer can buy.
+            </summary>
+            <value>
+            The maximum quantity.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.MinQuantity">
+            <summary>
+            Gets or sets the minimum quantity of the product that a customer can buy.
+            </summary>
+            <value>
+            The minimum quantity.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.ProductType">
+            <summary>
+            Gets or sets the type of the product. (can be Physical, Digital or Subscription)
+            </summary>
+            <value>
+            The type of the product.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.WeightUnit">
+            <summary>
+            Gets or sets the weight unit. (for physical product only)
+            </summary>
+            <value>
+            The weight unit.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Weight">
+            <summary>
+            Gets or sets the weight. (for physical product only)
+            </summary>
+            <value>
+            The weight.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.MeasureUnit">
+            <summary>
+            Gets or sets the dimensions measure unit. (for physical product only)
+            </summary>
+            <value>
+            The measure unit.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Height">
+            <summary>
+            Gets or sets the height. (for physical product only)
+            </summary>
+            <value>
+            The height.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Length">
+            <summary>
+            Gets or sets the length. (for physical product only)
+            </summary>
+            <value>
+            The length.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Width">
+            <summary>
+            Gets or sets the width. (for physical product only)
+            </summary>
+            <value>
+            The width.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.EnableReview">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Product"/> can be reviewed in storefront.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.MaxNumberOfDownload">
+            <summary>
+            Gets or sets the maximum number of download. (for digital product only)
+            </summary>
+            <value>
+            The maximum number of download.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.DownloadExpiration">
+            <summary>
+            Gets or sets the download expiration. (for digital product only)
+            </summary>
+            <value>
+            The download expiration.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.DownloadType">
+            <summary>
+            Gets or sets the type of the download. (for digital product only)
+            </summary>
+            <value>
+            The type of the download.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.HasUserAgreement">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Product"/> has user agreement. (for digital product only)
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.ShippingType">
+            <summary>
+            Gets or sets the type of the shipping.
+            </summary>
+            <value>
+            The type of the shipping.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.TaxType">
+            <summary>
+            Gets or sets the type of the tax.
+            </summary>
+            <value>
+            The type of the tax.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Vendor">
+            <summary>
+            Gets or sets the product vendor.
+            </summary>
+            <value>
+            The vendor.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.ImgSrc">
+            <summary>
+            Gets the default image for the product.
+            </summary>
+            <value>
+            The image source URL.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Properties">
+            <summary>
+            Gets or sets the properties.
+            </summary>
+            <value>
+            The properties.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Images">
+            <summary>
+            Gets or sets the images.
+            </summary>
+            <value>
+            The images.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Assets">
+            <summary>
+            Gets or sets the assets.
+            </summary>
+            <value>
+            The assets.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Variations">
+            <summary>
+            Gets or sets the variations.
+            </summary>
+            <value>
+            The variations.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Links">
+            <summary>
+            Gets or sets the links.
+            </summary>
+            <value>
+            The links.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Reviews">
+            <summary>
+            Gets or sets the reviews.
+            </summary>
+            <value>
+            The reviews.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.Associations">
+            <summary>
+            Gets or sets the associations.
+            </summary>
+            <value>
+            The associations.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Product.SeoInfos">
+            <summary>
+            Gets or sets the list of SEO information records.
+            </summary>
+            <value>
+            The seo infos.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchResult">
+            <summary>
+            Class representing the result of ListEntries search.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchResult.TotalCount">
+            <summary>
+            Gets or sets the total entries count matching the search criteria.
+            </summary>
+            <value>
+            The total count.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchResult.ListEntries">
+            <summary>
+            Gets or sets the list entries.
+            </summary>
+            <value>
+            The list entries.
+            </value>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ListEntryProduct">
+            <summary>
+            Product ListEntry record.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.Asset">
+            <summary>
+            Asset containing any content.
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.AssetBase">
+            <summary>
+            Base class for assets.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AssetBase.TypeId">
+            <summary>
+            Gets or sets the asset type identifier.
+            </summary>
+            <value>
+            The type identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AssetBase.Group">
+            <summary>
+            Gets or sets the asset group name.
+            </summary>
+            <value>
+            The group.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AssetBase.Name">
+            <summary>
+            Gets or sets the asset name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AssetBase.LanguageCode">
+            <summary>
+            Gets or sets the asset language.
+            </summary>
+            <value>
+            The language code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.AssetBase.IsInherited">
+            <summary>
+            System flag used to mark that object was inherited from other
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.Image">
+            <summary>
+            Image asset
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.Property">
+            <summary>
+            Property is metainformation record about what additional information merchandising item can be characterized. It's unheritable and can be defined in catalog, category, product or variation level.
+            </summary>
+        </member>
+        <member name="M:VirtoCommerce.CatalogModule.Web.Model.Property.#ctor(VirtoCommerce.CatalogModule.Web.Model.PropertyValue,System.String,System.String,VirtoCommerce.Domain.Catalog.Model.PropertyType)">
+            <summary>
+            Create property meta information from property value
+            </summary>
+            <param name="propValue"></param>
+            <param name="catalogId"></param>
+            <param name="categoryId"></param>
+            <param name="propertyType"></param>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.IsReadOnly">
+            <summary>
+            Gets or sets a value indicating whether user can change property value.
+            </summary>
+            <value>
+            <c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.IsManageable">
+            <summary>
+            Gets or sets a value indicating whether user can change property metadata or remove this property. 
+            </summary>
+            <value>
+            <c>true</c> if this instance is manageable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.IsNew">
+            <summary>
+            Gets or sets a value indicating whether this instance is new. A new property should be created on server site instead of trying to update it.
+            </summary>
+            <value>
+              <c>true</c> if this instance is new; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.CatalogId">
+            <summary>
+            Gets or sets the catalog id that this product belongs to.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Catalog">
+            <summary>
+            Gets or sets the catalog that this product belongs to.
+            </summary>
+            <value>
+            The catalog.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.CategoryId">
+            <summary>
+            Gets or sets the category id that this product belongs to.
+            </summary>
+            <value>
+            The category identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Category">
+            <summary>
+            Gets or sets the category that this product belongs to.
+            </summary>
+            <value>
+            The category.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Required">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Property"/> is required.
+            </summary>
+            <value>
+              <c>true</c> if required; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Dictionary">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Property"/> is dictionary.
+            </summary>
+            <value>
+              <c>true</c> if dictionary; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Multivalue">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Property"/> supports multiple values.
+            </summary>
+            <value>
+              <c>true</c> if multivalue; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Multilanguage">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:VirtoCommerce.CatalogModule.Web.Model.Property"/> is multilingual.
+            </summary>
+            <value>
+              <c>true</c> if multilanguage; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.ValueType">
+            <summary>
+            Gets or sets the type of the value.
+            </summary>
+            <value>
+            The type of the value.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Type">
+            <summary>
+            Gets or sets the type of object this property is applied to.
+            </summary>
+            <value>
+            The type.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Values">
+            <summary>
+            Gets or sets the current property value. Collection is used as a general placeholder to store both single and multi-value values.
+            </summary>
+            <value>
+            The values.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.DictionaryValues">
+            <summary>
+            Gets or sets the dictionary values.
+            </summary>
+            <value>
+            The dictionary values.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.Attributes">
+            <summary>
+            Gets or sets the attributes.
+            </summary>
+            <value>
+            The attributes.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.DisplayNames">
+            <summary>
+            Gets or sets the display names.
+            </summary>
+            <value>
+            The display names.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.Property.IsInherited">
+            <summary>
+            System flag used to mark that object was inherited from other
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.PropertyAttribute">
+            <summary>
+            Additional metainformation for a Property
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.PropertyValue">
+            <summary>
+            The actual property value assigned to concrete merchandising entity. 
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.PropertyName">
+            <summary>
+            Gets or sets the name of the property that this value belongs to.
+            </summary>
+            <value>
+            The name of the property.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.PropertyId">
+            <summary>
+            Gets or sets the id of the property that this value belongs to.
+            </summary>
+            <value>
+            The  property id.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.LanguageCode">
+            <summary>
+            Gets or sets the language of this property value.
+            </summary>
+            <value>
+            The language code.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.Alias">
+            <summary>
+            Gets or sets the value of this dictionary value in default language.
+            </summary>
+            <value>
+            The alias.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.ValueType">
+            <summary>
+            Gets or sets the type of the value.
+            </summary>
+            <value>
+            The type of the value.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.ValueId">
+            <summary>
+            Gets or sets the value id in case this value is for property which supports dictionary values.
+            </summary>
+            <value>
+            The value identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.Value">
+            <summary>
+            Gets or sets the actual value.
+            </summary>
+            <value>
+            The value.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.PropertyValue.IsInherited">
+            <summary>
+            System flag used to mark that object was inherited from other
+            </summary>
+        </member>
+        <member name="T:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria">
+            <summary>
+            Search criteria for categories and/or items.
+            </summary>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria.ResponseGroup">
+            <summary>
+            Gets or sets the response group to define which types of entries to search for.
+            </summary>
+            <value>
+            The response group.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria.Keyword">
+            <summary>
+            Gets or sets the keyword to search for.
+            </summary>
+            <value>
+            The keyword.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria.CategoryId">
+            <summary>
+            Gets or sets the category identifier.
+            </summary>
+            <value>
+            The category identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria.CatalogId">
+            <summary>
+            Gets or sets the catalog identifier.
+            </summary>
+            <value>
+            The catalog identifier.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria.Start">
+            <summary>
+            Gets or sets the start index of total results from which entries should be returned.
+            </summary>
+            <value>
+            The start.
+            </value>
+        </member>
+        <member name="P:VirtoCommerce.CatalogModule.Web.Model.ListEntrySearchCriteria.Count">
+            <summary>
+            Gets or sets the maximum count of results to return.
+            </summary>
+            <value>
+            The count.
+            </value>
+        </member>
+    </members>
+</doc>
