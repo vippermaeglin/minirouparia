@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<module>
+    <id>PagSeguro.Managed</id>
+    <version>2.1.0</version>
+    <platformVersion>2.10.0</platformVersion>
+    <title>PagSeguro Managed Module</title>
+    <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</description>
+    <authors>
+        <author>ViniciusArruda</author>
+    </authors>
+    <assemblyFile>VirtoCommerce.ManagedModule.Web.dll</assemblyFile>
+    <moduleType>VirtoCommerce.ManagedModule.Web.Module, VirtoCommerce.ManagedModule.Web</moduleType>
+    <styles>
+        <directory virtualPath="$/Content/css" searchPattern="*.css" searchSubdirectories="true" />
+    </styles>
+    <scripts>
+        <directory virtualPath="$/Scripts" searchPattern="*.js" searchSubdirectories="true" />
+    </scripts>
+</module>
