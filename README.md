@@ -1,4 +1,4 @@
-<img src="https://scontent.fplu3-1.fna.fbcdn.net/v/t1.0-9/15203250_1259097267486946_8020116633519356661_n.jpg?oh=078530a0f1c15d131a00e39a045f0214&oe=5A5A5B6F" alt="Self-Driving Car" width="800px">
+<img src="![image](https://user-images.githubusercontent.com/18119706/202857731-4acc049f-245c-4a47-a565-e55e5a02c939.png)" alt="Min Rouparia" width="800px">
 
 # MiniRouparia #
 * [www.minirouparia.com.br](https://www.facebook.com/minirouparia)
