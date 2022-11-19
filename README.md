@@ -1,4 +1,4 @@
-<img src="![image](https://user-images.githubusercontent.com/18119706/202857731-4acc049f-245c-4a47-a565-e55e5a02c939.png)" alt="Min Rouparia" width="800px">
+<img src="https://user-images.githubusercontent.com/18119706/202857731-4acc049f-245c-4a47-a565-e55e5a02c939.png" alt="Mini Rouparia" width="800px">
 
 # MiniRouparia #
 * [www.minirouparia.com.br](https://www.facebook.com/minirouparia)
